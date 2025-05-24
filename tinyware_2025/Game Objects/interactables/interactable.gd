@@ -18,7 +18,7 @@ func _ready():
 
 func set_outline(enabled: bool):
 	outline_material.set_shader_parameter("outline_enabled", enabled)
-	#outline_material.set_shader_parameter("line_color", stats.outline_color)
+	outline_material.set_shader_parameter("line_color", stats.outline_color)
 	pass
 
 func interact(player: Node) -> void:

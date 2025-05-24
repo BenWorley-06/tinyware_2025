@@ -9,12 +9,12 @@
 shader = ExtResource("3_jixxp")
 shader_parameter/outline_enabled = false
 shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/line_thickness = 1.0
+shader_parameter/line_thickness = 10.0
 
 [node name="Trash" instance=ExtResource("1_43he1")]
 script = ExtResource("2_jixxp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 material = SubResource("ShaderMaterial_c82h1")
-scale = Vector2(0.0742188, 0.0742188)
+scale = Vector2(0.0485734, 0.0485734)
 texture = ExtResource("2_76yqg")

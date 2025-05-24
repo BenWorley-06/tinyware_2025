@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvt403wrr8pl2"]
+[gd_scene load_steps=15 format=3 uid="uid://dvt403wrr8pl2"]
 
 [ext_resource type="PackedScene" uid="uid://bmuajt67yrrai" path="res://Game Objects/player/player.tscn" id="1_c3x52"]
 [ext_resource type="Texture2D" uid="uid://ylmj8o22so8e" path="res://Assets/environment/walls and floors/InteriorTilesLITE.png" id="2_51i1y"]
 [ext_resource type="PackedScene" uid="uid://bc6jsppisunbu" path="res://couch.tscn" id="2_cuufm"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="3_gcymt"]
 [ext_resource type="PackedScene" uid="uid://crqp61ntglap4" path="res://escape.tscn" id="5_e0df5"]
+[ext_resource type="PackedScene" uid="uid://3gq37n0v4ahg" path="res://trash.tscn" id="5_st353"]
 
 [sub_resource type="Environment" id="Environment_51i1y"]
 ambient_light_source = 2
@@ -1434,21 +1436,20 @@ texture = ExtResource("2_51i1y")
 [sub_resource type="TileSet" id="TileSet_51i1y"]
 sources/0 = SubResource("TileSetAtlasSource_51i1y")
 
-[sub_resource type="GDScript" id="GDScript_gcymt"]
-script/source = "extends Resource
-
-@export var interact_range: float = 500
-@export var outline_color: Color = Color(1, 1, 0) # yellow
-"
-
 [sub_resource type="Resource" id="Resource_e0df5"]
-script = SubResource("GDScript_gcymt")
+script = ExtResource("3_gcymt")
 interact_range = 20.0
 outline_color = Color(1, 1, 0, 1)
 metadata/_custom_type_script = "uid://db755iut8ikhi"
 
+[sub_resource type="Resource" id="Resource_km8yi"]
+script = ExtResource("3_gcymt")
+interact_range = 20.0
+outline_color = Color(0, 1, 0, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
+
 [sub_resource type="Resource" id="Resource_st353"]
-script = SubResource("GDScript_gcymt")
+script = ExtResource("3_gcymt")
 interact_range = 20.0
 outline_color = Color(1, 1, 0, 1)
 metadata/_custom_type_script = "uid://db755iut8ikhi"
@@ -1461,7 +1462,6 @@ metadata/_custom_type_script = "uid://db755iut8ikhi"
 environment = SubResource("Environment_51i1y")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="lighting"]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TileMap_Walls+Floors" type="TileMap" parent="."]
@@ -1487,6 +1487,11 @@ position = Vector2(555, 535)
 position = Vector2(1922, 1081)
 scale = Vector2(4.56, 4.56)
 stats = SubResource("Resource_e0df5")
+
+[node name="Trash" parent="." instance=ExtResource("5_st353")]
+position = Vector2(1381, 527)
+scale = Vector2(3.8, 3.8)
+stats = SubResource("Resource_km8yi")
 
 [node name="Couch" parent="." instance=ExtResource("2_cuufm")]
 position = Vector2(637, 742)
