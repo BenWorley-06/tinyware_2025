@@ -1437,6 +1437,8 @@ sources/0 = SubResource("TileSetAtlasSource_51i1y")
 [sub_resource type="GDScript" id="GDScript_gcymt"]
 script/source = "extends Resource
 
+#class_name Interactable_Stats
+
 @export var interact_range: float = 500
 @export var outline_color: Color = Color(1, 1, 0) # yellow
 "

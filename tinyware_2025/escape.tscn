@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://crqp61ntglap4"]
+
+[ext_resource type="PackedScene" uid="uid://behmj55qfuptr" path="res://interactable.tscn" id="1_yd6hd"]
+[ext_resource type="Script" uid="uid://cywirme20lyfr" path="res://escape.gd" id="2_jcl3f"]
+[ext_resource type="Texture2D" uid="uid://0ljxk6kwyalp" path="res://Assets/Temporary Art/3c735d32cbd0642.png" id="3_3pjg4"]
+[ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="3_tmxt1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fwpp2"]
+shader = ExtResource("3_tmxt1")
+shader_parameter/outline_enabled = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 17.842
+
+[node name="Escape" instance=ExtResource("1_yd6hd")]
+script = ExtResource("2_jcl3f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+material = SubResource("ShaderMaterial_fwpp2")
+position = Vector2(5.96046e-08, -3)
+scale = Vector2(0.0454688, 0.0454688)
+texture = ExtResource("3_3pjg4")

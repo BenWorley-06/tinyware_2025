@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb4q5xviqujks"]
+
+[ext_resource type="Script" uid="uid://cxjjxmvdjijj8" path="res://Assets/Menu/Scripts/end_menu.gd" id="1_hitm7"]
+[ext_resource type="FontFile" uid="uid://drsnf86lvb36g" path="res://Assets/Fonts/FrederickatheGreat-Regular.ttf" id="2_hm7it"]
+
+[node name="end_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hitm7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 104.0
+offset_right = 944.0
+offset_bottom = 256.0
+theme_override_fonts/normal_font = ExtResource("2_hm7it")
+theme_override_font_sizes/bold_italics_font_size = 120
+theme_override_font_sizes/italics_font_size = 120
+theme_override_font_sizes/mono_font_size = 120
+theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/bold_font_size = 120
+bbcode_enabled = true
+text = "[wave amp=70 freq=3]T h e  E n d"
+
+[node name="Retry" type="Button" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 312.0
+offset_right = 477.0
+offset_bottom = 394.0
+theme_override_fonts/font = ExtResource("2_hm7it")
+theme_override_font_sizes/font_size = 60
+text = "Retry"
+
+[node name="Main" type="Button" parent="."]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 312.0
+offset_right = 824.0
+offset_bottom = 394.0
+theme_override_fonts/font = ExtResource("2_hm7it")
+theme_override_font_sizes/font_size = 60
+text = "Main"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Main" to="." method="_on_main_pressed"]

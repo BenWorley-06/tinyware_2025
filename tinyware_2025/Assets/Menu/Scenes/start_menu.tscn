@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8omtk6d5oabc"]
+
+[ext_resource type="Script" uid="uid://epsn2fnu35nn" path="res://Assets/Menu/Scripts/start_menu.gd" id="1_fw500"]
+[ext_resource type="FontFile" uid="uid://drsnf86lvb36g" path="res://Assets/Fonts/FrederickatheGreat-Regular.ttf" id="2_m4dv6"]
+
+[node name="start_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fw500")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 536.0
+offset_right = 1115.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("2_m4dv6")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 216.0
+offset_right = 273.0
+offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("2_m4dv6")
+theme_override_font_sizes/font_size = 60
+text = "Play"
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 152.0
+theme_override_fonts/normal_font = ExtResource("2_m4dv6")
+theme_override_font_sizes/bold_italics_font_size = 120
+theme_override_font_sizes/italics_font_size = 120
+theme_override_font_sizes/mono_font_size = 120
+theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/bold_font_size = 120
+bbcode_enabled = true
+text = "[wave amp=70 freq=3]B a b y   D e l u l u"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

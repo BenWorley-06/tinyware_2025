@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://3gq37n0v4ahg"]
+
+[ext_resource type="PackedScene" uid="uid://behmj55qfuptr" path="res://interactable.tscn" id="1_43he1"]
+[ext_resource type="Texture2D" uid="uid://ddnpaxt6dk1dc" path="res://Assets/Temporary Art/pngimg.com - trash_can_PNG18449.png" id="2_76yqg"]
+[ext_resource type="Script" uid="uid://bxb1buwm5mqfv" path="res://trash.gd" id="2_jixxp"]
+[ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="3_jixxp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c82h1"]
+shader = ExtResource("3_jixxp")
+shader_parameter/outline_enabled = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+
+[node name="Trash" instance=ExtResource("1_43he1")]
+script = ExtResource("2_jixxp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+material = SubResource("ShaderMaterial_c82h1")
+scale = Vector2(0.0742188, 0.0742188)
+texture = ExtResource("2_76yqg")
