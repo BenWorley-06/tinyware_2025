@@ -1552,13 +1552,11 @@ point_count = 24
 [node name="game" type="Node2D"]
 
 [node name="lighting" type="Node2D" parent="."]
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
 environment = SubResource("Environment_51i1y")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="lighting"]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
