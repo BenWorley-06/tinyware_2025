@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8omtk6d5oabc"]
+[gd_scene load_steps=6 format=3 uid="uid://b8omtk6d5oabc"]
 
 [ext_resource type="Script" uid="uid://epsn2fnu35nn" path="res://Assets/Menu/Scripts/start_menu.gd" id="1_fw500"]
 [ext_resource type="FontFile" uid="uid://drsnf86lvb36g" path="res://Assets/Fonts/FrederickatheGreat-Regular.ttf" id="2_m4dv6"]
+[ext_resource type="Texture2D" uid="uid://bths8rs8hq2af" path="res://Assets/Temporary Art/Light Godot.png" id="3_81cey"]
+[ext_resource type="Texture2D" uid="uid://fvgt0tiyf2h8" path="res://Assets/Temporary Art/bitmap.png" id="4_1wf4l"]
+[ext_resource type="Texture2D" uid="uid://y605jdbdwt25" path="res://Assets/Temporary Art/EyesInTheDark.png" id="5_lw5tp"]
 
 [node name="start_menu" type="Control"]
 layout_mode = 3
@@ -21,26 +24,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Exit" type="Button" parent="."]
-layout_mode = 0
-offset_left = 992.0
-offset_top = 536.0
-offset_right = 1115.0
-offset_bottom = 618.0
-theme_override_fonts/font = ExtResource("2_m4dv6")
-theme_override_font_sizes/font_size = 60
-text = "Exit"
-
-[node name="Play" type="Button" parent="."]
-layout_mode = 0
-offset_left = 144.0
-offset_top = 216.0
-offset_right = 273.0
-offset_bottom = 298.0
-theme_override_fonts/font = ExtResource("2_m4dv6")
-theme_override_font_sizes/font_size = 60
-text = "Play"
-
 [node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_right = 1152.0
@@ -54,5 +37,87 @@ theme_override_font_sizes/bold_font_size = 120
 bbcode_enabled = true
 text = "[wave amp=70 freq=3]B a b y   D e l u l u"
 
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 961.0
+offset_top = 462.0
+offset_right = 1090.0
+offset_bottom = 630.0
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m4dv6")
+theme_override_font_sizes/font_size = 60
+text = "Play"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m4dv6")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
+[node name="LightGodot" type="Sprite2D" parent="."]
+modulate = Color(0.169245, 0.169245, 0.169245, 1)
+position = Vector2(220, 284)
+texture = ExtResource("3_81cey")
+
+[node name="Bitmap" type="Sprite2D" parent="LightGodot"]
+position = Vector2(8.00002, 1)
+scale = Vector2(0.26412, 0.26412)
+texture = ExtResource("4_1wf4l")
+
+[node name="EyesInTheDark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(523, 271)
+rotation = -0.435651
+scale = Vector2(0.260307, 0.435726)
+texture = ExtResource("5_lw5tp")
+
+[node name="EyesInTheDark2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(134, 483)
+scale = Vector2(0.179457, 0.179457)
+texture = ExtResource("5_lw5tp")
+
+[node name="EyesInTheDark3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(482, 483)
+rotation = 0.33676
+scale = Vector2(0.144588, 0.17611)
+texture = ExtResource("5_lw5tp")
+
+[node name="EyesInTheDark4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(766, 541)
+scale = Vector2(0.237609, 0.474091)
+texture = ExtResource("5_lw5tp")
+
+[node name="EyesInTheDark5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(888, 379)
+rotation = -0.61332
+scale = Vector2(0.157646, 0.157646)
+texture = ExtResource("5_lw5tp")
+
+[node name="EyesInTheDark6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(899, 234)
+rotation = 0.347683
+scale = Vector2(0.338896, 0.338896)
+texture = ExtResource("5_lw5tp")
+
+[node name="EyesInTheDark7" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(323, 563)
+rotation = 0.27284
+scale = Vector2(0.322477, 0.575118)
+texture = ExtResource("5_lw5tp")
+
+[node name="EyesInTheDark8" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(665, 394)
+scale = Vector2(0.274977, 0.274977)
+texture = ExtResource("5_lw5tp")
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -64,7 +64,7 @@ func _now_hiding(player):
 func sprite_toggle():
 	if stats.can_move:
 		$Sprite2D.visible = true
-		$PointLight2D.visible=true
+		$PointLight2D.visible=false
 	else:
 		$Sprite2D.visible = false
 		$PointLight2D.visible=false

@@ -21,7 +21,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1328.71, -885.804, -1368.45, 1936.28, 2296.84, 1970.35, 2262.77, -935.489)])
 agent_radius = 70.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cuufm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxmc7"]
 texture = ExtResource("2_51i1y")
 0:0/0 = 0
 1:0/0 = 0
@@ -824,9 +824,9 @@ texture = ExtResource("2_51i1y")
 
 [sub_resource type="TileSet" id="TileSet_gcymt"]
 physics_layer_0/collision_layer = 1
-sources/3 = SubResource("TileSetAtlasSource_cuufm")
+sources/3 = SubResource("TileSetAtlasSource_qxmc7")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_51i1y"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fr0ty"]
 texture = ExtResource("2_51i1y")
 0:0/0 = 0
 1:0/0 = 0
@@ -1442,11 +1442,11 @@ texture = ExtResource("2_51i1y")
 31:27/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_51i1y"]
-sources/0 = SubResource("TileSetAtlasSource_51i1y")
+sources/0 = SubResource("TileSetAtlasSource_fr0ty")
 
 [sub_resource type="Resource" id="Resource_e0df5"]
 script = ExtResource("3_gcymt")
-interact_range = 20.0
+interact_range = 5.0
 outline_color = Color(1, 1, 0, 1)
 metadata/_custom_type_script = "uid://db755iut8ikhi"
 
@@ -1477,6 +1477,7 @@ point_count = 10
 environment = SubResource("Environment_51i1y")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="lighting"]
+color = Color(0, 0, 0, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(555, 535)
