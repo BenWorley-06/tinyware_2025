@@ -13,6 +13,8 @@ extends Control
 ]
 
 func _on_play_pressed():
+	$PlaySound.play()
+	$PlaySound.finished
 	await start_transition()
 	SceneManager.go_to_game()
 

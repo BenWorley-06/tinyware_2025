@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://b8omtk6d5oabc"]
+[gd_scene load_steps=29 format=3 uid="uid://b8omtk6d5oabc"]
 
 [ext_resource type="Script" uid="uid://epsn2fnu35nn" path="res://Assets/Menu/Scripts/start_menu.gd" id="1_fw500"]
 [ext_resource type="FontFile" uid="uid://drsnf86lvb36g" path="res://Assets/Fonts/FrederickatheGreat-Regular.ttf" id="2_m4dv6"]
 [ext_resource type="Texture2D" uid="uid://bths8rs8hq2af" path="res://Assets/Temporary Art/Light Godot.png" id="3_81cey"]
 [ext_resource type="Texture2D" uid="uid://fvgt0tiyf2h8" path="res://Assets/Temporary Art/bitmap.png" id="4_1wf4l"]
 [ext_resource type="Texture2D" uid="uid://y605jdbdwt25" path="res://Assets/Temporary Art/EyesInTheDark.png" id="5_lw5tp"]
+[ext_resource type="AudioStream" uid="uid://3fm733k8gl8w" path="res://Assets/Milay Assets/sounds/Baby2 (mp3cut.net).wav" id="6_1wf4l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81cey"]
 
@@ -193,6 +194,10 @@ position = Vector2(1033.59, 341.42)
 rotation = 0.493867
 scale = Vector2(0.187061, 0.314829)
 texture = ExtResource("5_lw5tp")
+
+[node name="PlaySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1wf4l")
+volume_db = -10.0
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

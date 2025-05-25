@@ -1465,7 +1465,7 @@ metadata/_custom_type_script = "uid://db755iut8ikhi"
 
 [sub_resource type="Resource" id="Resource_fr0ty"]
 script = ExtResource("3_gcymt")
-interact_range = 20.0
+interact_range = 10.0
 outline_color = Color(0, 1, 0, 1)
 metadata/_custom_type_script = "uid://db755iut8ikhi"
 
@@ -1484,6 +1484,7 @@ point_count = 10
 environment = SubResource("Environment_51i1y")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="lighting"]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
