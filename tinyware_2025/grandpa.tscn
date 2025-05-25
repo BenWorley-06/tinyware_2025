@@ -11,7 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_cu38i"]
 script = ExtResource("3_p7rxj")
-speed = 200.0
+speed = 100.0
 max_force = 0.5
 patrol_speed = 200.0
 patrol_offset = 0.0
@@ -84,3 +84,4 @@ script = ExtResource("5_dtyxo")
 [node name="jingle_audio" type="AudioStreamPlayer" parent="."]
 
 [node name="sfx" type="AudioStreamPlayer2D" parent="."]
+volume_db = 24.0
