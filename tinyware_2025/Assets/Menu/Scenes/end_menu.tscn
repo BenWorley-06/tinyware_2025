@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://bb4q5xviqujks"]
+[gd_scene load_steps=27 format=3 uid="uid://bb4q5xviqujks"]
 
 [ext_resource type="Script" uid="uid://cxjjxmvdjijj8" path="res://Assets/Menu/Scripts/end_menu.gd" id="1_hitm7"]
 [ext_resource type="Texture2D" uid="uid://cjx1o73humv28" path="res://Assets/Temporary Art/pngtree-the-big-yellow-moon-shone-brightly-png-image_6634642.png" id="2_1c0ws"]
+[ext_resource type="Texture2D" uid="uid://yaywtf1d6etf" path="res://Assets/Temporary Art/Untitled_Artwork (1).png" id="2_8a6m2"]
 [ext_resource type="FontFile" uid="uid://drsnf86lvb36g" path="res://Assets/Fonts/FrederickatheGreat-Regular.ttf" id="2_hm7it"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8a6m2"]
@@ -66,34 +67,38 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0745098, 0.0941176, 0.384314, 1)
 
+[node name="UntitledArtwork(1)" type="Sprite2D" parent="."]
+position = Vector2(579, 326)
+texture = ExtResource("2_8a6m2")
+
 [node name="Pngtree-the-big-yellow-moon-shone-brightly-png-image6634642" type="Sprite2D" parent="."]
-position = Vector2(572, 332)
+position = Vector2(576, 344)
 scale = Vector2(2.55278, 2.55278)
 texture = ExtResource("2_1c0ws")
 
 [node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 223.0
-offset_top = 122.0
-offset_right = 951.0
-offset_bottom = 274.0
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 1329.0
+offset_bottom = 288.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_hm7it")
-theme_override_font_sizes/bold_italics_font_size = 120
-theme_override_font_sizes/italics_font_size = 120
-theme_override_font_sizes/mono_font_size = 120
-theme_override_font_sizes/normal_font_size = 120
-theme_override_font_sizes/bold_font_size = 120
+theme_override_font_sizes/bold_italics_font_size = 180
+theme_override_font_sizes/italics_font_size = 180
+theme_override_font_sizes/mono_font_size = 180
+theme_override_font_sizes/normal_font_size = 180
+theme_override_font_sizes/bold_font_size = 180
 bbcode_enabled = true
-text = "[wave amp=70 freq=3]T h e  E n d"
+text = "[wave amp=70 freq=3]T h e E n d "
 
 [node name="Retry" type="Button" parent="."]
 layout_mode = 0
 offset_left = 319.0
 offset_top = 408.0
-offset_right = 476.0
-offset_bottom = 490.0
+offset_right = 535.0
+offset_bottom = 516.0
 theme_override_fonts/font = ExtResource("2_hm7it")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8a6m2")
@@ -110,21 +115,20 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_lpr6h")
 
 [node name="Label" type="Label" parent="Retry"]
 layout_mode = 0
-offset_left = 6.0
-offset_right = 204.0
-offset_bottom = 99.0
+offset_right = 210.0
+offset_bottom = 105.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hm7it")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 text = "Retry"
 
 [node name="Main" type="Button" parent="."]
 layout_mode = 0
-offset_left = 671.0
+offset_left = 643.0
 offset_top = 408.0
-offset_right = 823.0
-offset_bottom = 490.0
+offset_right = 872.0
+offset_bottom = 515.0
 theme_override_fonts/font = ExtResource("2_hm7it")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mui24")
@@ -141,14 +145,12 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_t5w3l")
 
 [node name="Label2" type="Label" parent="Main"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 4.0
-offset_right = 200.0
-offset_bottom = 103.0
+offset_right = 216.0
+offset_bottom = 111.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hm7it")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 90
 text = "Main"
 
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]

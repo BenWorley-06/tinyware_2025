@@ -79,10 +79,15 @@ func _now_trap(player):
 			stats.awaiting_unpause = false
 		else:
 			print("Player saved!")
+			var texture_size = $PointLight2D2.texture
 			is_hidden = true
+			texture_size.width = 1000
+			texture_size.height = 1000
 			await get_tree().create_timer(5.0).timeout
 			print("Player not saved :(")
 			is_hidden = false
+			texture_size.width = 500
+			texture_size.height = 500
 
 func sprite_toggle():
 	if stats.can_move:

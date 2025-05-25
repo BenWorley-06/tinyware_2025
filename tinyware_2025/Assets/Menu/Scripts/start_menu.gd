@@ -8,7 +8,8 @@ extends Control
 	$EyesInTheDark5,
 	$EyesInTheDark6,
 	$EyesInTheDark7,
-	$EyesInTheDark8
+	$EyesInTheDark8,
+	$EyesInTheDark9
 ]
 
 func _on_play_pressed():

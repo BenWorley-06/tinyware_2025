@@ -70,8 +70,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 152.0
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 1164.0
+offset_bottom = 155.0
 theme_override_fonts/normal_font = ExtResource("2_m4dv6")
 theme_override_font_sizes/bold_italics_font_size = 120
 theme_override_font_sizes/italics_font_size = 120
@@ -147,14 +149,14 @@ texture = ExtResource("5_lw5tp")
 
 [node name="EyesInTheDark3" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(482, 483)
+position = Vector2(444, 433)
 rotation = 0.33676
 scale = Vector2(0.144588, 0.17611)
 texture = ExtResource("5_lw5tp")
 
 [node name="EyesInTheDark4" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(766, 541)
+position = Vector2(718, 540)
 scale = Vector2(0.237609, 0.474091)
 texture = ExtResource("5_lw5tp")
 
@@ -167,22 +169,29 @@ texture = ExtResource("5_lw5tp")
 
 [node name="EyesInTheDark6" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(899, 234)
+position = Vector2(830, 239)
 rotation = 0.347683
 scale = Vector2(0.338896, 0.338896)
 texture = ExtResource("5_lw5tp")
 
 [node name="EyesInTheDark7" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(323, 563)
+position = Vector2(346, 579)
 rotation = 0.27284
-scale = Vector2(0.322477, 0.575118)
+scale = Vector2(0.372699, 0.72121)
 texture = ExtResource("5_lw5tp")
 
 [node name="EyesInTheDark8" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(665, 394)
-scale = Vector2(0.274977, 0.274977)
+scale = Vector2(0.431681, 0.431681)
+texture = ExtResource("5_lw5tp")
+
+[node name="EyesInTheDark9" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1033.59, 341.42)
+rotation = 0.493867
+scale = Vector2(0.187061, 0.314829)
 texture = ExtResource("5_lw5tp")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]

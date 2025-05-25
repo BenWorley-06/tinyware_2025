@@ -40,6 +40,7 @@ grow_vertical = 2
 color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [node name="Screenshot2025-05-25004719" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.28485, 0.28485, 0.28485, 1)
 position = Vector2(572, 340)
 scale = Vector2(0.332822, 0.332822)
