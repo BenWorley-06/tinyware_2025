@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://08r3nw7piqes"]
+
+[ext_resource type="Script" uid="uid://b441u6gky64ue" path="res://la_lor_jsp.gd" id="1_o2yhp"]
+[ext_resource type="Texture2D" uid="uid://djsd4708inm8y" path="res://Assets/Milay Assets/jsp/la_llorona_2.png" id="2_o2yhp"]
+[ext_resource type="AudioStream" uid="uid://dm4vfiteo67h3" path="res://Assets/sounds/sfx/jump_scare.mp3" id="3_iach4"]
+
+[node name="grandpa_jsp" type="CanvasLayer"]
+script = ExtResource("1_o2yhp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_o2yhp")
+
+[node name="BlackFade" type="ColorRect" parent="."]
+offset_left = -420.0
+offset_top = -540.0
+offset_right = -380.0
+offset_bottom = -500.0
+scale = Vector2(33.2908, 33.2908)
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iach4")
+volume_db = 24.0

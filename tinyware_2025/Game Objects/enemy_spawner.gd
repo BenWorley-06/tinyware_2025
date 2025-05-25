@@ -11,6 +11,7 @@ extends Node2D
 @export var barney_scene: PackedScene
 @export var chup_scene: PackedScene
 @export var gramp_scene: PackedScene
+@export var la_llarona_scene: PackedScene
 
 var paths: Array
 var enemies: Array
@@ -19,7 +20,7 @@ func _ready() -> void:
 	for child in $paths.get_children():
 		if child is Path2D:
 			paths.append(child)
-	enemies=[barney_scene,chup_scene,gramp_scene]
+	enemies=[barney_scene,chup_scene,gramp_scene,la_llarona_scene]
 	
 
 func _process(delta: float) -> void:
