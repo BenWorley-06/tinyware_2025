@@ -85,7 +85,7 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.00446)
-scale = Vector2(4.70456, 3.7601)
+scale = Vector2(2.43509, 2.56554)
 shape = SubResource("CircleShape2D_8sluc")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

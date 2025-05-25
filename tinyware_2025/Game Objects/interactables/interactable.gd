@@ -40,12 +40,12 @@ func _on_body_entered(body):
 	print("Can Interact")
 	set_outline(true)
 	can_interact = true
-	body_entered_call()
+	body_entered_call(body)
 
 func _on_body_exited(body):
 	print("Can't Interact")
 	set_outline(false)
 	can_interact = false
 	
-func body_entered_call():
+func body_entered_call(body):
 	pass

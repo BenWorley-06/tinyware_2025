@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvfr87qfcv0m6"]
+
+[ext_resource type="Script" uid="uid://dleka8fcj27ik" path="res://lego.gd" id="1_iq1gj"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="2_33vp5"]
+[ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="3_no6gh"]
+[ext_resource type="Texture2D" uid="uid://blvtiigcdaion" path="res://Assets/environment/misc_interactables/lego.png" id="4_mw37a"]
+[ext_resource type="AudioStream" uid="uid://djetl5o1oackp" path="res://Assets/sounds/sfx/lego-breaking.mp3" id="5_4mfe7"]
+
+[sub_resource type="Resource" id="Resource_mw37a"]
+script = ExtResource("2_33vp5")
+interact_range = 10.0
+outline_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbxgf"]
+shader = ExtResource("3_no6gh")
+shader_parameter/outline_enabled = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6u34r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6u34r"]
+
+[node name="lego" type="Area2D"]
+script = ExtResource("1_iq1gj")
+stats = SubResource("Resource_mw37a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kbxgf")
+rotation = 0.0430108
+texture = ExtResource("4_mw37a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+material = SubResource("ShaderMaterial_6u34r")
+scale = Vector2(12.3618, 11.0808)
+shape = SubResource("CircleShape2D_6u34r")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4mfe7")

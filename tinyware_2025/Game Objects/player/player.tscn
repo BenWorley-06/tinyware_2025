@@ -68,7 +68,7 @@ fill_to = Vector2(1, 0.5)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wpc8b"]
 gradient = SubResource("Gradient_dmw6m")
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_738ww")
 stats = SubResource("Resource_cnw44")
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhus25cve57q3"]
+[gd_scene load_steps=10 format=3 uid="uid://dhus25cve57q3"]
 
 [ext_resource type="Script" uid="uid://cmg8eugsoyyf1" path="res://police_car.gd" id="1_8364l"]
 [ext_resource type="Texture2D" uid="uid://d0bv8cd510p6u" path="res://Assets/environment/misc_interactables/police car.png" id="1_spw8y"]
 [ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="2_6u34r"]
 [ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="3_e8ulu"]
+[ext_resource type="AudioStream" uid="uid://cxrtgp5o0ki2b" path="res://Assets/sounds/sfx/police.mp3" id="5_sv6er"]
 
 [sub_resource type="Resource" id="Resource_e8ulu"]
 script = ExtResource("2_6u34r")
@@ -35,3 +36,6 @@ texture = ExtResource("1_spw8y")
 material = SubResource("ShaderMaterial_6u34r")
 scale = Vector2(12.3618, 11.0808)
 shape = SubResource("CircleShape2D_6u34r")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_sv6er")
