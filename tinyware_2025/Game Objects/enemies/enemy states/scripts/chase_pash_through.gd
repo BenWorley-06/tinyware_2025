@@ -2,11 +2,14 @@ extends Enemy_State
 class_name Chase_Pass_Through
 
 func enter():
+	enemy.jingle_audio.stream=enemy.stats.chasing
+	enemy.jingle_audio.play()
 	enemy.collider.disabled=true
 	enemy.esprite.speed_scale=1
 func exit():pass
 func update(delta:float):
 	steering(delta)
+	enemy.move_and_slide()
 func should_transition() -> Enemy_State:
 	if check_hidden():
 		return Confused.new(enemy)

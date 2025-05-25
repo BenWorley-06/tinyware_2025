@@ -6,6 +6,8 @@ class_name Player
 @onready var psprite: AnimatedSprite2D = $psprite
 @onready var collider: CollisionShape2D = $CollisionShape2D
 @onready var camera: Camera2D = $Camera2D
+@onready var walk: AudioStreamPlayer = $walk
+@onready var cooing: AudioStreamPlayer = $cooing
 
 var current_interactable: Interactable = null
 
@@ -13,6 +15,9 @@ var is_hidden = false
 
 var in_Dir = Vector2.ZERO
 
+func _ready() -> void:
+	walk.play()
+	
 func _process(delta: float) -> void:
 	take_input()
 	movement(delta)
@@ -32,8 +37,10 @@ func handle_visuals():
 	if in_Dir!=Vector2.ZERO:
 		look_at(global_position+in_Dir)
 		psprite.speed_scale=1
+		walk.stream_paused=false
 	else:
 		psprite.speed_scale=0
+		walk.stream_paused=true
 	sprite_toggle()
 
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://c26xmftd2q0uo"]
+[gd_scene load_steps=17 format=3 uid="uid://c26xmftd2q0uo"]
 
 [ext_resource type="Script" uid="uid://bhty6v6rgvcb2" path="res://chupacabra.gd" id="1_al4hu"]
+[ext_resource type="AudioStream" uid="uid://tsdmramb132b" path="res://Assets/sounds/ben_sounds/chup noise 1.mp3" id="2_6xrg5"]
 [ext_resource type="AudioStream" uid="uid://dj3dk67d8lymk" path="res://Assets/sounds/jingles/Sound 3.mp3" id="2_8j02e"]
 [ext_resource type="Script" uid="uid://oxu0twatnue0" path="res://Game Objects/enemies/enemy stats.gd" id="3_8j02e"]
 [ext_resource type="PackedScene" uid="uid://d3exn17j15do2" path="res://chup_jsp.tscn" id="3_i23cv"]
@@ -16,13 +17,14 @@ patrol_speed = 400.0
 patrol_offset = 0.0
 path_calc_time = 0.2
 detect_range = 500.0
-catch_range = 70.0
+catch_range = 100.0
 hear_range = 2000.0
 patrol_enable = 1
 through_walls_enable = 0
 jump_scare_scene = ExtResource("3_i23cv")
 jingle = ExtResource("2_8j02e")
 walking = ExtResource("5_i23cv")
+chasing = ExtResource("2_6xrg5")
 metadata/_custom_type_script = "uid://oxu0twatnue0"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j02e"]
@@ -89,7 +91,6 @@ scale = Vector2(4.70456, 3.7601)
 shape = SubResource("CircleShape2D_8sluc")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="state_manager" type="Node" parent="."]
 script = ExtResource("3_qygtt")

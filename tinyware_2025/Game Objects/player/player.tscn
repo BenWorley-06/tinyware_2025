@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bmuajt67yrrai"]
+[gd_scene load_steps=19 format=3 uid="uid://bmuajt67yrrai"]
 
 [ext_resource type="Script" uid="uid://kavclfs4egsp" path="res://Game Objects/player/player.gd" id="1_738ww"]
 [ext_resource type="Script" uid="uid://5w4fcm6gpb26" path="res://Game Objects/player/player_stats.gd" id="2_ta7nw"]
 [ext_resource type="Texture2D" uid="uid://yi65xm7op5gj" path="res://Assets/Milay Assets/baby_crawl.png" id="3_ta7nw"]
 [ext_resource type="Texture2D" uid="uid://bths8rs8hq2af" path="res://Assets/Temporary Art/Light Godot.png" id="4_ta7nw"]
+[ext_resource type="AudioStream" uid="uid://yclj77vcrxex" path="res://Assets/sounds/ben_sounds/baby walk.mp3" id="5_dmw6m"]
+[ext_resource type="AudioStream" uid="uid://8m8vqnhubs34" path="res://Assets/sounds/ben_sounds/baby noise 1.mp3" id="6_wpc8b"]
 
 [sub_resource type="Resource" id="Resource_cnw44"]
 script = ExtResource("2_ta7nw")
@@ -107,6 +109,13 @@ texture = SubResource("GradientTexture2D_cnw44")
 visible = false
 scale = Vector2(0.108729, 0.108729)
 texture = SubResource("GradientTexture2D_wpc8b")
+
+[node name="walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dmw6m")
+volume_db = -20.0
+
+[node name="cooing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wpc8b")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

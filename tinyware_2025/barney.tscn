@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4ilorm434qxv"]
+[gd_scene load_steps=17 format=3 uid="uid://b4ilorm434qxv"]
 
 [ext_resource type="Script" uid="uid://cwtsm78a4q8t7" path="res://barney.gd" id="1_o13ib"]
 [ext_resource type="AudioStream" uid="uid://ba4svakpntypv" path="res://Assets/sounds/jingles/Sound 2.mp3" id="2_ktweh"]
+[ext_resource type="AudioStream" uid="uid://b28aopkee5umw" path="res://Assets/sounds/ben_sounds/dino noise 1.mp3" id="2_q6t6o"]
 [ext_resource type="Script" uid="uid://oxu0twatnue0" path="res://Game Objects/enemies/enemy stats.gd" id="2_w7p8p"]
 [ext_resource type="PackedScene" uid="uid://ckgqchbqe5dua" path="res://barney_jsp.tscn" id="3_ktweh"]
 [ext_resource type="Texture2D" uid="uid://calv0yrduyrwi" path="res://Assets/Milay Assets/dino_walk_run.png" id="3_qqtai"]
@@ -10,7 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_acjc2"]
 script = ExtResource("2_w7p8p")
-speed = 400.0
+speed = 120.0
 max_force = 0.2
 patrol_speed = 120.0
 patrol_offset = 0.0
@@ -23,6 +24,7 @@ through_walls_enable = 0
 jump_scare_scene = ExtResource("3_ktweh")
 jingle = ExtResource("2_ktweh")
 walking = ExtResource("5_ktweh")
+chasing = ExtResource("2_q6t6o")
 metadata/_custom_type_script = "uid://oxu0twatnue0"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w7p8p"]
@@ -89,7 +91,6 @@ scale = Vector2(2.43509, 2.56554)
 shape = SubResource("CircleShape2D_8sluc")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="state_manager" type="Node" parent="."]
 script = ExtResource("3_w7p8p")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tsdmramb132b"
+path="res://.godot/imported/chup noise 1.mp3-b6f4ca0972085bdaea609dd22742a4b2.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/ben_sounds/chup noise 1.mp3"
+dest_files=["res://.godot/imported/chup noise 1.mp3-b6f4ca0972085bdaea609dd22742a4b2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
