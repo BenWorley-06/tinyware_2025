@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dvt403wrr8pl2"]
+[gd_scene load_steps=30 format=3 uid="uid://dvt403wrr8pl2"]
 
 [ext_resource type="PackedScene" uid="uid://bmuajt67yrrai" path="res://Game Objects/player/player.tscn" id="1_c3x52"]
 [ext_resource type="Texture2D" uid="uid://ylmj8o22so8e" path="res://Assets/environment/walls and floors/InteriorTilesLITE.png" id="2_51i1y"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dhjrge6m38w35" path="res://la_lloroma.tscn" id="13_d1kc1"]
 [ext_resource type="PackedScene" uid="uid://bvfr87qfcv0m6" path="res://lego.tscn" id="15_omwxr"]
 [ext_resource type="PackedScene" uid="uid://crm2v73blfe0o" path="res://fridge.tscn" id="16_133w8"]
+[ext_resource type="PackedScene" uid="uid://1jc6qoan1itf" path="res://chew_toy.tscn" id="17_rvxs8"]
+[ext_resource type="PackedScene" uid="uid://d2lyfidn1f2ur" path="res://trap.tscn" id="18_pygqg"]
 
 [sub_resource type="Environment" id="Environment_51i1y"]
 ambient_light_source = 2
@@ -1608,6 +1610,9 @@ position = Vector2(186, 2998)
 [node name="lego" parent="interactables" instance=ExtResource("15_omwxr")]
 position = Vector2(904, 800)
 
+[node name="Trap" parent="interactables" instance=ExtResource("18_pygqg")]
+position = Vector2(714, 247)
+
 [node name="enemy_spawner" type="Node2D" parent="."]
 script = ExtResource("8_qxmc7")
 spawn_amount = 5
@@ -1639,6 +1644,41 @@ position = Vector2(3013, 565)
 spawn_chance = 0.5
 object_scene = ExtResource("10_6xpe7")
 
+[node name="random_object_spawn28" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(1499, 2055)
+spawn_chance = 0.5
+object_scene = ExtResource("18_pygqg")
+
+[node name="random_object_spawn29" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(271, 3497)
+spawn_chance = 0.5
+object_scene = ExtResource("18_pygqg")
+
+[node name="random_object_spawn30" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(-1195, 3771)
+spawn_chance = 0.5
+object_scene = ExtResource("18_pygqg")
+
+[node name="random_object_spawn31" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(152, 4867)
+spawn_chance = 0.5
+object_scene = ExtResource("18_pygqg")
+
+[node name="random_object_spawn32" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(2786, 4045)
+spawn_chance = 0.5
+object_scene = ExtResource("18_pygqg")
+
+[node name="random_object_spawn33" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(5944, 2615)
+spawn_chance = 0.5
+object_scene = ExtResource("18_pygqg")
+
+[node name="random_object_spawn34" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(-1517, 2269)
+spawn_chance = 0.5
+object_scene = ExtResource("18_pygqg")
+
 [node name="random_object_spawn7" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
 position = Vector2(3078, 1363)
 spawn_chance = 0.5
@@ -1647,7 +1687,42 @@ object_scene = ExtResource("15_omwxr")
 [node name="random_object_spawn8" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
 position = Vector2(4024, 2052)
 spawn_chance = 0.5
-object_scene = ExtResource("15_omwxr")
+object_scene = ExtResource("17_rvxs8")
+
+[node name="random_object_spawn35" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(3023, 3306)
+spawn_chance = 0.5
+object_scene = ExtResource("17_rvxs8")
+
+[node name="random_object_spawn36" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(-282, 2712)
+spawn_chance = 0.5
+object_scene = ExtResource("17_rvxs8")
+
+[node name="random_object_spawn37" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(-1080, 2419)
+spawn_chance = 0.5
+object_scene = ExtResource("17_rvxs8")
+
+[node name="random_object_spawn38" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(-592, 4641)
+spawn_chance = 0.5
+object_scene = ExtResource("17_rvxs8")
+
+[node name="random_object_spawn39" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(3991, 3355)
+spawn_chance = 0.5
+object_scene = ExtResource("17_rvxs8")
+
+[node name="random_object_spawn40" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(5627, 3127)
+spawn_chance = 0.5
+object_scene = ExtResource("17_rvxs8")
+
+[node name="random_object_spawn41" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(3877, 840)
+spawn_chance = 0.5
+object_scene = ExtResource("17_rvxs8")
 
 [node name="random_object_spawn9" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
 position = Vector2(547, 3283)
