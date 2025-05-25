@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rlf23edxei2a"
+path="res://.godot/imported/footstep1_1.wav-54086fb09c171fa887a1163c5d349a52.sample"
+
+[deps]
+
+source_file="res://Assets/Milay Assets/sounds/footstep1_1.wav"
+dest_files=["res://.godot/imported/footstep1_1.wav-54086fb09c171fa887a1163c5d349a52.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

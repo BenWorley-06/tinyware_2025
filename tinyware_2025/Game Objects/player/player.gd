@@ -2,6 +2,9 @@ extends CharacterBody2D
 class_name Player
 
 @export var stats: Player_Stats
+
+@onready var psprite: AnimatedSprite2D = $psprite
+
 var current_interactable: Interactable = null
 
 var is_hidden = false
@@ -9,7 +12,6 @@ var is_hidden = false
 var in_Dir = Vector2.ZERO
 
 func _process(delta: float) -> void:
-	sprite_toggle()
 	take_input()
 	movement(delta)
 	handle_visuals()
@@ -27,6 +29,10 @@ func movement(delta:float) -> void:
 func handle_visuals():
 	if in_Dir!=Vector2.ZERO:
 		look_at(global_position+in_Dir)
+		psprite.speed_scale=1
+	else:
+		psprite.speed_scale=0
+	sprite_toggle()
 
 
 func take_input():
@@ -91,8 +97,8 @@ func _now_trap(player):
 
 func sprite_toggle():
 	if stats.can_move:
-		$Sprite2D.visible = true
+		psprite.visible = true
 		$PointLight2D.visible=false
 	elif not stats.can_move and not stats.frozen:
-		$Sprite2D.visible = false
+		psprite.visible = false
 		$PointLight2D.visible=false
