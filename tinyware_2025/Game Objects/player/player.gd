@@ -4,6 +4,8 @@ class_name Player
 @export var stats: Player_Stats
 
 @onready var psprite: AnimatedSprite2D = $psprite
+@onready var collider: CollisionShape2D = $CollisionShape2D
+@onready var camera: Camera2D = $Camera2D
 
 var current_interactable: Interactable = null
 
@@ -60,6 +62,7 @@ func interact_with():
 				stats.can_move = true
 				stats.awaiting_unpause = false
 				is_hidden=false
+				collider.disabled=false
 		elif current_interactable and current_interactable.can_interact:
 				current_interactable.interact(self)
 
@@ -69,6 +72,7 @@ func _now_hiding(player):
 		is_hidden=true
 		stats.can_move = false
 		stats.awaiting_unpause = true
+		collider.disabled=true
 
 func _now_trap(player):
 	if player == self:
@@ -102,3 +106,8 @@ func sprite_toggle():
 	elif not stats.can_move and not stats.frozen:
 		psprite.visible = false
 		$PointLight2D.visible=false
+		
+func create_jump_scare_scene(scene: PackedScene):
+	var scare = scene.instantiate()
+	$/root/game.add_child(scare)
+	

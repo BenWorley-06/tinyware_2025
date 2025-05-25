@@ -8,14 +8,18 @@ extends Node2D
 
 @onready var player = $/root/game/player
 
-@export var enemy_scene: PackedScene
+@export var barney_scene: PackedScene
+
 
 var paths: Array
+var enemies: Array
 
 func _ready() -> void:
 	for child in $paths.get_children():
 		if child is Path2D:
 			paths.append(child)
+	enemies=[barney_scene]
+	
 
 func _process(delta: float) -> void:
 	spawn_timer-=delta
@@ -40,7 +44,7 @@ func spawn_enemy():
 			max_dist = dist
 			best_point = pos
 			
-	var enemy = enemy_scene.instantiate()
+	var enemy = enemies.pick_random().instantiate()
 	enemy.global_position = best_point
 	add_child(enemy)
 	enemy.path_node=path_chosen

@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy8xqnubhyq6k"]
+
+[ext_resource type="PackedScene" uid="uid://behmj55qfuptr" path="res://interactable.tscn" id="1_8ktb5"]
+[ext_resource type="Script" uid="uid://4gokt4s56i8d" path="res://big_couch.gd" id="2_mu0tr"]
+[ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="2_vax8v"]
+[ext_resource type="Texture2D" uid="uid://drkfjj6ni46m7" path="res://Assets/environment/furniture/big_couch.png" id="3_8ktb5"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="3_mu0tr"]
+
+[sub_resource type="Resource" id="Resource_2ga31"]
+script = ExtResource("3_mu0tr")
+interact_range = 50.0
+outline_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxro2"]
+shader = ExtResource("2_vax8v")
+shader_parameter/outline_enabled = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 10.0
+
+[node name="Big_Couch" instance=ExtResource("1_8ktb5")]
+texture_filter = 1
+scale = Vector2(1, 1.0076)
+script = ExtResource("2_mu0tr")
+stats = SubResource("Resource_2ga31")
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(1.37236, 1.37236)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+material = SubResource("ShaderMaterial_nxro2")
+scale = Vector2(3, 3)
+texture = ExtResource("3_8ktb5")

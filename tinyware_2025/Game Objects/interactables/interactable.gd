@@ -15,6 +15,9 @@ var can_interact = false
 func _ready():
 	if stats:
 		update_collision()
+	set_outline(false)
+	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("body_exited", Callable(self, "_on_body_exited"))
 
 func set_outline(enabled: bool):
 	outline_material.set_shader_parameter("outline_enabled", enabled)
@@ -37,8 +40,12 @@ func _on_body_entered(body):
 	print("Can Interact")
 	set_outline(true)
 	can_interact = true
+	body_entered_call()
 
 func _on_body_exited(body):
 	print("Can't Interact")
 	set_outline(false)
 	can_interact = false
+	
+func body_entered_call():
+	pass

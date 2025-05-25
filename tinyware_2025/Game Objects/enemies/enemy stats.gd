@@ -14,7 +14,10 @@ class_name Enemy_Stats
 #	Ranges
 @export var detect_range:float = 400
 @export var catch_range: float = 70
+@export var hear_range: float = 2000
 
 #	Enablers
 @export var patrol_enable: int =1
 @export var through_walls_enable:int = 1
+
+@export var jump_scare_scene: PackedScene

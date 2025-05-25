@@ -13,7 +13,10 @@ patrol_speed = 200.0
 patrol_offset = 0.0
 path_calc_time = 0.2
 detect_range = 400.0
+catch_range = 70.0
+hear_range = 2000.0
 patrol_enable = 1
+through_walls_enable = 1
 metadata/_custom_type_script = "uid://oxu0twatnue0"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8sluc"]
