@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2gb5jdggrqsr"]
+
+[ext_resource type="Script" uid="uid://dc6dwtsrbvjd6" path="res://jump_scare_test.gd" id="1_vhxuk"]
+[ext_resource type="Texture2D" uid="uid://bgp61jq5kfnbb" path="res://Assets/Milay Assets/jsp/grandpa.png" id="2_sho2o"]
+[ext_resource type="Texture2D" uid="uid://capbgnc66tnfo" path="res://Assets/Milay Assets/jsp/grandpa_2.png" id="3_emu0u"]
+
+[node name="grandpa_jsp" type="CanvasLayer"]
+script = ExtResource("1_vhxuk")
+jsp1 = ExtResource("2_sho2o")
+jsp2 = ExtResource("3_emu0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_emu0u")
+
+[node name="BlackFade" type="ColorRect" parent="."]
+offset_left = -420.0
+offset_top = -540.0
+offset_right = -380.0
+offset_bottom = -500.0
+scale = Vector2(33.2908, 33.2908)
+color = Color(0, 0, 0, 1)

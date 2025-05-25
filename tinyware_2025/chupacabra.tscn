@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bhty6v6rgvcb2" path="res://chupacabra.gd" id="1_al4hu"]
 [ext_resource type="AudioStream" uid="uid://dj3dk67d8lymk" path="res://Assets/sounds/jingles/Sound 3.mp3" id="2_8j02e"]
-[ext_resource type="PackedScene" uid="uid://ckr0wrsxmbeam" path="res://jump_scare_test.tscn" id="2_qygtt"]
 [ext_resource type="Script" uid="uid://oxu0twatnue0" path="res://Game Objects/enemies/enemy stats.gd" id="3_8j02e"]
+[ext_resource type="PackedScene" uid="uid://d3exn17j15do2" path="res://chup_jsp.tscn" id="3_i23cv"]
 [ext_resource type="Script" uid="uid://5t1wqifatbll" path="res://state_manager.gd" id="3_qygtt"]
 [ext_resource type="Texture2D" uid="uid://d2vr030qg1u8s" path="res://Assets/Milay Assets/chupacabra_walk_run.png" id="4_qygtt"]
 [ext_resource type="AudioStream" uid="uid://ef8carbrckky" path="res://Assets/Milay Assets/sounds/footstep2_1.wav" id="5_i23cv"]
@@ -20,7 +20,7 @@ catch_range = 70.0
 hear_range = 2000.0
 patrol_enable = 1
 through_walls_enable = 0
-jump_scare_scene = ExtResource("2_qygtt")
+jump_scare_scene = ExtResource("3_i23cv")
 jingle = ExtResource("2_8j02e")
 walking = ExtResource("5_i23cv")
 metadata/_custom_type_script = "uid://oxu0twatnue0"

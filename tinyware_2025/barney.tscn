@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://b4ilorm434qxv"]
 
 [ext_resource type="Script" uid="uid://cwtsm78a4q8t7" path="res://barney.gd" id="1_o13ib"]
-[ext_resource type="PackedScene" uid="uid://ckr0wrsxmbeam" path="res://jump_scare_test.tscn" id="2_acjc2"]
 [ext_resource type="AudioStream" uid="uid://ba4svakpntypv" path="res://Assets/sounds/jingles/Sound 2.mp3" id="2_ktweh"]
 [ext_resource type="Script" uid="uid://oxu0twatnue0" path="res://Game Objects/enemies/enemy stats.gd" id="2_w7p8p"]
+[ext_resource type="PackedScene" uid="uid://ckgqchbqe5dua" path="res://barney_jsp.tscn" id="3_ktweh"]
 [ext_resource type="Texture2D" uid="uid://calv0yrduyrwi" path="res://Assets/Milay Assets/dino_walk_run.png" id="3_qqtai"]
 [ext_resource type="Script" uid="uid://5t1wqifatbll" path="res://state_manager.gd" id="3_w7p8p"]
 [ext_resource type="AudioStream" uid="uid://rlf23edxei2a" path="res://Assets/Milay Assets/sounds/footstep1_1.wav" id="5_ktweh"]
@@ -20,7 +20,7 @@ catch_range = 200.0
 hear_range = 2000.0
 patrol_enable = 1
 through_walls_enable = 0
-jump_scare_scene = ExtResource("2_acjc2")
+jump_scare_scene = ExtResource("3_ktweh")
 jingle = ExtResource("2_ktweh")
 walking = ExtResource("5_ktweh")
 metadata/_custom_type_script = "uid://oxu0twatnue0"
