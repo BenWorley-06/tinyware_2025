@@ -1,9 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://crqp61ntglap4"]
+[gd_scene load_steps=8 format=3 uid="uid://crqp61ntglap4"]
 
 [ext_resource type="PackedScene" uid="uid://behmj55qfuptr" path="res://interactable.tscn" id="1_yd6hd"]
 [ext_resource type="Script" uid="uid://cywirme20lyfr" path="res://escape.gd" id="2_jcl3f"]
-[ext_resource type="Texture2D" uid="uid://0ljxk6kwyalp" path="res://Assets/Temporary Art/3c735d32cbd0642.png" id="3_3pjg4"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="3_fwpp2"]
 [ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="3_tmxt1"]
+[ext_resource type="Texture2D" uid="uid://dk45stie3at4c" path="res://Assets/environment/furniture/exit_rug.png" id="4_tmxt1"]
+
+[sub_resource type="Resource" id="Resource_4w4k0"]
+script = ExtResource("3_fwpp2")
+interact_range = 500.0
+outline_color = Color(0, 1, 0, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fwpp2"]
 shader = ExtResource("3_tmxt1")
@@ -13,9 +20,15 @@ shader_parameter/line_thickness = 17.842
 
 [node name="Escape" instance=ExtResource("1_yd6hd")]
 script = ExtResource("2_jcl3f")
+stats = SubResource("Resource_4w4k0")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 1)
+scale = Vector2(2.53309, 2.6692)
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture_filter = 1
 material = SubResource("ShaderMaterial_fwpp2")
-position = Vector2(5.96046e-08, -3)
-scale = Vector2(0.0454688, 0.0454688)
-texture = ExtResource("3_3pjg4")
+position = Vector2(-8, 10)
+scale = Vector2(3, 3)
+texture = ExtResource("4_tmxt1")

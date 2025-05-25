@@ -21,3 +21,8 @@ class_name Enemy_Stats
 @export var through_walls_enable:int = 1
 
 @export var jump_scare_scene: PackedScene
+
+#	Sounds
+@export var jingle: AudioStream
+@export var walking: AudioStream
+@export var chasing: AudioStream

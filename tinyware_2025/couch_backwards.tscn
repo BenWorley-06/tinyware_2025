@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhx4855axjg31"]
+
+[ext_resource type="PackedScene" uid="uid://behmj55qfuptr" path="res://interactable.tscn" id="1_dyncj"]
+[ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="2_1b5g1"]
+[ext_resource type="Script" uid="uid://c218jlb2dcxsg" path="res://couch_backwards.gd" id="2_cmkxw"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="3_cmkxw"]
+[ext_resource type="Texture2D" uid="uid://celwufb8j2ssd" path="res://Assets/environment/furniture/backwards_couch.png" id="3_dyncj"]
+
+[sub_resource type="Resource" id="Resource_7gpkt"]
+script = ExtResource("3_cmkxw")
+interact_range = 50.0
+outline_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxro2"]
+shader = ExtResource("2_1b5g1")
+shader_parameter/outline_enabled = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 10.0
+
+[node name="couch_backwards" instance=ExtResource("1_dyncj")]
+texture_filter = 1
+scale = Vector2(1, 1.0076)
+script = ExtResource("2_cmkxw")
+stats = SubResource("Resource_7gpkt")
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(1.37236, 1.37236)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+material = SubResource("ShaderMaterial_nxro2")
+scale = Vector2(4, 4)
+texture = ExtResource("3_dyncj")

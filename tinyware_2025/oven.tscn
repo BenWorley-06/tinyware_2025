@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://00810kpr87gy"]
+
+[ext_resource type="PackedScene" uid="uid://behmj55qfuptr" path="res://interactable.tscn" id="1_3n55h"]
+[ext_resource type="Script" uid="uid://c218jlb2dcxsg" path="res://couch_backwards.gd" id="2_7fonb"]
+[ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="2_i66py"]
+[ext_resource type="Texture2D" uid="uid://dqleasdd6oihf" path="res://Assets/environment/furniture/oven.png" id="3_3n55h"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="3_7fonb"]
+
+[sub_resource type="Resource" id="Resource_8j351"]
+script = ExtResource("3_7fonb")
+interact_range = 40.0
+outline_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxro2"]
+shader = ExtResource("2_i66py")
+shader_parameter/outline_enabled = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 10.0
+
+[node name="oven" instance=ExtResource("1_3n55h")]
+texture_filter = 1
+scale = Vector2(1, 1.008)
+script = ExtResource("2_7fonb")
+stats = SubResource("Resource_8j351")
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(1.37236, 1.37236)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+material = SubResource("ShaderMaterial_nxro2")
+scale = Vector2(4, 4)
+texture = ExtResource("3_3n55h")

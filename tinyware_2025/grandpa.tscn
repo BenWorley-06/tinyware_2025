@@ -1,0 +1,87 @@
+[gd_scene load_steps=15 format=3 uid="uid://ba8hxwh8lis3h"]
+
+[ext_resource type="Script" uid="uid://c3gswka7f5tfq" path="res://grandpa.gd" id="1_5mhso"]
+[ext_resource type="PackedScene" uid="uid://ckr0wrsxmbeam" path="res://jump_scare_test.tscn" id="2_5u4oo"]
+[ext_resource type="AudioStream" uid="uid://cjmcvj8pjmb5b" path="res://Assets/Milay Assets/sounds/Ghostmove1.wav" id="2_m26qk"]
+[ext_resource type="AudioStream" uid="uid://c810fsq3ghw06" path="res://Assets/sounds/jingles/Sound 1.mp3" id="2_p7rxj"]
+[ext_resource type="Script" uid="uid://oxu0twatnue0" path="res://Game Objects/enemies/enemy stats.gd" id="3_p7rxj"]
+[ext_resource type="Texture2D" uid="uid://syxt3nnt1xse" path="res://Assets/Milay Assets/grandpa_walk_run.png" id="4_cu38i"]
+[ext_resource type="Script" uid="uid://5t1wqifatbll" path="res://state_manager.gd" id="5_dtyxo"]
+[ext_resource type="AudioStream" uid="uid://dgi32jc5td66t" path="res://Assets/sounds/sfx/160.wav" id="6_m26qk"]
+
+[sub_resource type="Resource" id="Resource_cu38i"]
+script = ExtResource("3_p7rxj")
+speed = 200.0
+max_force = 0.5
+patrol_speed = 200.0
+patrol_offset = 0.0
+path_calc_time = 0.2
+detect_range = 400.0
+catch_range = 70.0
+hear_range = 2000.0
+patrol_enable = 1
+through_walls_enable = 1
+jump_scare_scene = ExtResource("2_5u4oo")
+jingle = ExtResource("2_p7rxj")
+walking = ExtResource("6_m26qk")
+chasing = ExtResource("2_m26qk")
+metadata/_custom_type_script = "uid://oxu0twatnue0"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u4oo"]
+atlas = ExtResource("4_cu38i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7rxj"]
+atlas = ExtResource("4_cu38i")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m26qk"]
+atlas = ExtResource("4_cu38i")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_38xc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5u4oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7rxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m26qk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sluc"]
+
+[node name="grandpa" type="CharacterBody2D" groups=["enemies"]]
+scale = Vector2(0.665676, 0.665676)
+script = ExtResource("1_5mhso")
+stats = SubResource("Resource_cu38i")
+
+[node name="esprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-25.538, 1.50223)
+rotation = 1.59054
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_38xc7")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.00446)
+scale = Vector2(4.70456, 3.7601)
+shape = SubResource("CircleShape2D_8sluc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="state_manager" type="Node" parent="."]
+script = ExtResource("5_dtyxo")
+
+[node name="jingle_audio" type="AudioStreamPlayer" parent="."]
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]

@@ -5,6 +5,8 @@ class_name Enemy
 
 @onready var state: State_Manager = $state_manager
 @onready var esprite: AnimatedSprite2D = $esprite
+@onready var sfx: AudioStreamPlayer2D = $sfx
+@onready var jingle_audio: AudioStreamPlayer = $jingle_audio
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @onready var collider: CollisionShape2D = $CollisionShape2D
@@ -14,6 +16,12 @@ class_name Enemy
 var path_node: Path2D
 
 var caught=false
+
+func _ready() -> void:
+	jingle_audio.stream = stats.jingle
+	jingle_audio.play()
+	sfx.stream=stats.walking
+	sfx.play()
 
 func _process(delta: float) -> void:
 	state.update(delta)

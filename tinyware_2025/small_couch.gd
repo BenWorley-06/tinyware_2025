@@ -1,0 +1,1 @@
+extends Hidding_Place

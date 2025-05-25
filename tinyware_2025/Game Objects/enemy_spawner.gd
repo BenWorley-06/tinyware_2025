@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var spawn_amount:int = 1
+@export var spawn_amount:int = 0
 @export var spawn_wait:float = 100
 @export var spawn_wait_start:float = 10
 
@@ -9,7 +9,8 @@ extends Node2D
 @onready var player = $/root/game/player
 
 @export var barney_scene: PackedScene
-
+@export var chup_scene: PackedScene
+@export var gramp_scene: PackedScene
 
 var paths: Array
 var enemies: Array
@@ -18,7 +19,7 @@ func _ready() -> void:
 	for child in $paths.get_children():
 		if child is Path2D:
 			paths.append(child)
-	enemies=[barney_scene]
+	enemies=[barney_scene,chup_scene,gramp_scene]
 	
 
 func _process(delta: float) -> void:
@@ -30,6 +31,8 @@ func _process(delta: float) -> void:
 	
 func spawn_enemy():
 	var path_chosen = paths.pick_random()
+	if paths.size() > 1:
+		paths.erase(path_chosen)
 	var best_point:= Vector2.ZERO
 	var num_samples := 50
 	
@@ -43,7 +46,7 @@ func spawn_enemy():
 		if dist > max_dist:
 			max_dist = dist
 			best_point = pos
-			
+		
 	var enemy = enemies.pick_random().instantiate()
 	enemy.global_position = best_point
 	add_child(enemy)
