@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://c3j70q5uerdko"]
+[gd_scene load_steps=33 format=3 uid="uid://c3j70q5uerdko"]
 
-[ext_resource type="Texture2D" uid="uid://dgxb6hcqhsk1k" path="res://Assets/Temporary Art/Screenshot 2025-05-25 004719.png" id="1_p4ysh"]
+[ext_resource type="Script" uid="uid://6vo1n44r4yya" path="res://Assets/Menu/Scenes/death_screen.gd" id="1_fgtlh"]
 [ext_resource type="FontFile" uid="uid://drsnf86lvb36g" path="res://Assets/Fonts/FrederickatheGreat-Regular.ttf" id="2_08uyq"]
+[ext_resource type="Texture2D" uid="uid://b8hvxryxda5e5" path="res://Assets/Milay Assets/parents.png" id="3_fgtlh"]
 
 [sub_resource type="Gradient" id="Gradient_typ3r"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -58,6 +59,42 @@ fill_to = Vector2(1, 0.5)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agm7h"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjeob"]
+atlas = ExtResource("3_fgtlh")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni8rp"]
+atlas = ExtResource("3_fgtlh")
+region = Rect2(576, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohhcf"]
+atlas = ExtResource("3_fgtlh")
+region = Rect2(0, 324, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqocv"]
+atlas = ExtResource("3_fgtlh")
+region = Rect2(576, 324, 576, 324)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06aam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjeob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni8rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohhcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqocv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="death_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -65,6 +102,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fgtlh")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.621524, 0.621524, 0.621524, 1)
@@ -81,14 +119,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-
-[node name="Screenshot2025-05-25004719" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0.28485, 0.28485, 0.28485, 1)
-position = Vector2(572, 340)
-scale = Vector2(0.332822, 0.332822)
-texture = ExtResource("1_p4ysh")
+color = Color(0.0338533, 0.0338533, 0.0338533, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -211,7 +242,7 @@ offset_top = 462.0
 offset_right = 1090.0
 offset_bottom = 630.0
 
-[node name="Play" type="Button" parent="VBoxContainer"]
+[node name="Retry" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_08uyq")
 theme_override_font_sizes/font_size = 60
@@ -228,7 +259,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oqddf")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hlnka")
 text = "Retry"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Main" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_08uyq")
 theme_override_font_sizes/font_size = 60
@@ -244,3 +275,12 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_onp2a")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_rlki2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_agm7h")
 text = "Main"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(577, 325)
+scale = Vector2(2.00154, 2.00154)
+sprite_frames = SubResource("SpriteFrames_06aam")
+frame_progress = 0.63306
+
+[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main" to="." method="_on_main_pressed"]

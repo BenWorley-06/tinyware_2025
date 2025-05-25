@@ -53,4 +53,4 @@ func _process(delta: float) -> void:
 		fade_color.a = alpha
 		black_fade.color = fade_color
 	else:
-		SceneManager.go_to_game_over()
+		SceneManager.go_to_death_screen()
