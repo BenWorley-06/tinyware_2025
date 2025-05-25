@@ -19,7 +19,7 @@ func update(delta:float):
 		enemy.global_position = enemy.path_node.to_global(local_pos)
 		
 func should_transition() -> Enemy_State:
-	if get_dist_player()<=enemy.stats.detect_range:
+	if get_dist_player()<=enemy.stats.detect_range and check_hidden()==false:
 		if enemy.stats.through_walls_enable:
 			return Chase_Pass_Through.new(enemy)
 		return Chase_State_Nav.new(enemy)

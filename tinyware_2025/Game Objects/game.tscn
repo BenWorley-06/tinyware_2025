@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dvt403wrr8pl2"]
+[gd_scene load_steps=23 format=3 uid="uid://dvt403wrr8pl2"]
 
 [ext_resource type="PackedScene" uid="uid://bmuajt67yrrai" path="res://Game Objects/player/player.tscn" id="1_c3x52"]
 [ext_resource type="Texture2D" uid="uid://ylmj8o22so8e" path="res://Assets/environment/walls and floors/InteriorTilesLITE.png" id="2_51i1y"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://b5pqx2hlbdhk1" path="res://Game Objects/enemy_spawner.gd" id="8_qxmc7"]
 [ext_resource type="PackedScene" uid="uid://b4ilorm434qxv" path="res://barney.tscn" id="9_6xpe7"]
 [ext_resource type="PackedScene" uid="uid://d2lyfidn1f2ur" path="res://trap.tscn" id="9_fr0ty"]
+[ext_resource type="PackedScene" uid="uid://cy8xqnubhyq6k" path="res://big_couch.tscn" id="10_6xpe7"]
+[ext_resource type="PackedScene" uid="uid://25h02bdrliha" path="res://random_object_spawn.tscn" id="11_j41ou"]
 
 [sub_resource type="Environment" id="Environment_51i1y"]
 ambient_light_source = 2
@@ -1547,5 +1549,9 @@ barney_scene = ExtResource("9_6xpe7")
 position = Vector2(-19, 752)
 curve = SubResource("Curve2D_km8yi")
 
-[node name="Trap" parent="." instance=ExtResource("9_fr0ty")]
-position = Vector2(93, 884)
+[node name="interactable_spawns" type="Node2D" parent="."]
+
+[node name="random_object_spawn" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(689, 257)
+spawn_chance = 0.5
+object_scene = ExtResource("10_6xpe7")

@@ -14,7 +14,7 @@ void fragment() {
 	vec4 color = texture(TEXTURE, UV);
 
 	if (outline_enabled) {
-		vec2 size = TEXTURE_PIXEL_SIZE * line_thickness;
+		vec2 size = TEXTURE_PIXEL_SIZE * line_thickness*vec2(0.1, 0.1);
 		float outline = 0.0;
 
 		for (int i = 0; i < OFFSETS.length(); i++) {
@@ -27,3 +27,5 @@ void fragment() {
 
 	COLOR = color;
 }
+
+

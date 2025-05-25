@@ -1,9 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2lyfidn1f2ur"]
+[gd_scene load_steps=8 format=3 uid="uid://d2lyfidn1f2ur"]
 
 [ext_resource type="PackedScene" uid="uid://behmj55qfuptr" path="res://interactable.tscn" id="1_kd1db"]
 [ext_resource type="Script" uid="uid://ba6bnedrjg5au" path="res://trap.gd" id="2_w2pp3"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="3_3wwhq"]
 [ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="3_bmoth"]
 [ext_resource type="Texture2D" uid="uid://cjr0mua4cimoe" path="res://Assets/Temporary Art/pngtree-luxury-sofa-for-home-decoration-png-image_11888479.png" id="4_bmoth"]
+
+[sub_resource type="Resource" id="Resource_74bs6"]
+script = ExtResource("3_3wwhq")
+interact_range = 500.0
+outline_color = Color(1, 1, 0, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3wwhq"]
 shader = ExtResource("3_bmoth")
@@ -13,6 +20,7 @@ shader_parameter/line_thickness = 10.0
 
 [node name="Trap" instance=ExtResource("1_kd1db")]
 script = ExtResource("2_w2pp3")
+stats = SubResource("Resource_74bs6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 material = SubResource("ShaderMaterial_3wwhq")
