@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_cnw44"]
 script = ExtResource("2_ta7nw")
-max_speed = 400
+max_speed = 120
 acceleration = 400
 metadata/_custom_type_script = "uid://5w4fcm6gpb26"
 
@@ -90,7 +90,8 @@ position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.5
+scale = Vector2(2, 2)
+energy = 0.6
 texture = ExtResource("4_ta7nw")
 
 [node name="Area2D" type="Area2D" parent="."]
