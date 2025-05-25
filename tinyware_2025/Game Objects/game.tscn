@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvt403wrr8pl2"]
+[gd_scene load_steps=21 format=3 uid="uid://dvt403wrr8pl2"]
 
 [ext_resource type="PackedScene" uid="uid://bmuajt67yrrai" path="res://Game Objects/player/player.tscn" id="1_c3x52"]
 [ext_resource type="Texture2D" uid="uid://ylmj8o22so8e" path="res://Assets/environment/walls and floors/InteriorTilesLITE.png" id="2_51i1y"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://3gq37n0v4ahg" path="res://trash.tscn" id="5_st353"]
 [ext_resource type="PackedScene" uid="uid://41j5ou6u36rb" path="res://enemy_base_scene.tscn" id="7_km8yi"]
 [ext_resource type="Script" uid="uid://b5pqx2hlbdhk1" path="res://Game Objects/enemy_spawner.gd" id="8_qxmc7"]
+[ext_resource type="PackedScene" uid="uid://d2lyfidn1f2ur" path="res://trap.tscn" id="9_fr0ty"]
 
 [sub_resource type="Environment" id="Environment_51i1y"]
 ambient_light_source = 2
@@ -1447,7 +1448,7 @@ sources/0 = SubResource("TileSetAtlasSource_fr0ty")
 [sub_resource type="Resource" id="Resource_e0df5"]
 script = ExtResource("3_gcymt")
 interact_range = 5.0
-outline_color = Color(1, 1, 0, 1)
+outline_color = Color(1, 0.52549, 0.713726, 1)
 metadata/_custom_type_script = "uid://db755iut8ikhi"
 
 [sub_resource type="Resource" id="Resource_km8yi"]
@@ -1459,7 +1460,13 @@ metadata/_custom_type_script = "uid://db755iut8ikhi"
 [sub_resource type="Resource" id="Resource_st353"]
 script = ExtResource("3_gcymt")
 interact_range = 20.0
-outline_color = Color(1, 1, 0, 1)
+outline_color = Color(0, 1, 0, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
+
+[sub_resource type="Resource" id="Resource_fr0ty"]
+script = ExtResource("3_gcymt")
+interact_range = 20.0
+outline_color = Color(0, 1, 0, 1)
 metadata/_custom_type_script = "uid://db755iut8ikhi"
 
 [sub_resource type="Curve2D" id="Curve2D_km8yi"]
@@ -1477,6 +1484,7 @@ point_count = 10
 environment = SubResource("Environment_51i1y")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="lighting"]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
@@ -1521,6 +1529,11 @@ stats = SubResource("Resource_km8yi")
 position = Vector2(637, 742)
 scale = Vector2(3.8, 3.8)
 stats = SubResource("Resource_st353")
+
+[node name="Trap" parent="interactables" instance=ExtResource("9_fr0ty")]
+position = Vector2(450, 329)
+scale = Vector2(3.04, 3.04)
+stats = SubResource("Resource_fr0ty")
 
 [node name="enemy_spawner" type="Node2D" parent="."]
 script = ExtResource("8_qxmc7")

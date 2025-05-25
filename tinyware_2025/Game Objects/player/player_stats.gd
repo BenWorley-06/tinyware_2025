@@ -5,3 +5,4 @@ class_name Player_Stats
 @export var acceleration = 400
 var can_move = true
 var awaiting_unpause = false
+var frozen = false

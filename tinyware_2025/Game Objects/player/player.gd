@@ -36,9 +36,12 @@ func take_input():
 func _on_area_2d_area_entered(area):
 	if area is Interactable:
 		current_interactable = area
-		var callback = Callable(self, "_now_hiding")
-		if not area.is_connected("hiding", callback):
-			area.connect("hiding", callback)
+		var callback1 = Callable(self, "_now_hiding")
+		var callback2 = Callable(self, "_now_trap")
+		if not area.is_connected("hiding", callback1):
+			area.connect("hiding", callback1)
+		if not area.is_connected("chance", callback2):
+			area.connect("chance", callback2)
 
 
 func _on_area_2d_area_exited(area):
@@ -61,10 +64,30 @@ func _now_hiding(player):
 		stats.can_move = false
 		stats.awaiting_unpause = true
 
+func _now_trap(player):
+	if player == self:
+		var random_number = randi() % 10 + 1
+		if random_number <= 3:
+			print("Player now Frozen")
+			stats.frozen = true
+			stats.can_move = false
+			stats.awaiting_unpause = true
+			await get_tree().create_timer(5.0).timeout
+			print("Player unfrozen")
+			stats.frozen = false
+			stats.can_move = true
+			stats.awaiting_unpause = false
+		else:
+			print("Player saved!")
+			is_hidden = true
+			await get_tree().create_timer(5.0).timeout
+			print("Player not saved :(")
+			is_hidden = false
+
 func sprite_toggle():
 	if stats.can_move:
 		$Sprite2D.visible = true
 		$PointLight2D.visible=false
-	else:
+	elif not stats.can_move and not stats.frozen:
 		$Sprite2D.visible = false
 		$PointLight2D.visible=false

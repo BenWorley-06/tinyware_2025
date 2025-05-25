@@ -1,10 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8omtk6d5oabc"]
+[gd_scene load_steps=28 format=3 uid="uid://b8omtk6d5oabc"]
 
 [ext_resource type="Script" uid="uid://epsn2fnu35nn" path="res://Assets/Menu/Scripts/start_menu.gd" id="1_fw500"]
 [ext_resource type="FontFile" uid="uid://drsnf86lvb36g" path="res://Assets/Fonts/FrederickatheGreat-Regular.ttf" id="2_m4dv6"]
 [ext_resource type="Texture2D" uid="uid://bths8rs8hq2af" path="res://Assets/Temporary Art/Light Godot.png" id="3_81cey"]
 [ext_resource type="Texture2D" uid="uid://fvgt0tiyf2h8" path="res://Assets/Temporary Art/bitmap.png" id="4_1wf4l"]
 [ext_resource type="Texture2D" uid="uid://y605jdbdwt25" path="res://Assets/Temporary Art/EyesInTheDark.png" id="5_lw5tp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81cey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1wf4l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lw5tp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcxc0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m4yxn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8nbfr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vno23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xr4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4hyn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2eoak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nhhpf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3p6a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2l36i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1vth"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cxcv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x67ax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhuwd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awqwq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxdoe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imbf6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4snf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b7res"]
 
 [node name="start_menu" type="Control"]
 layout_mode = 3
@@ -48,17 +92,39 @@ offset_bottom = 630.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_m4dv6")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_81cey")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_1wf4l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lw5tp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_jcxc0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_m4yxn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_8nbfr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vno23")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_4xr4o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d4hyn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2eoak")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nhhpf")
 text = "Play"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_m4dv6")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l3p6a")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_2l36i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s1vth")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_1cxcv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_x67ax")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bhuwd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_awqwq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sxdoe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_imbf6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_i4snf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b7res")
 text = "Exit"
 
 [node name="LightGodot" type="Sprite2D" parent="."]
 modulate = Color(0.169245, 0.169245, 0.169245, 1)
-position = Vector2(220, 284)
+position = Vector2(223, 309)
 texture = ExtResource("3_81cey")
 
 [node name="Bitmap" type="Sprite2D" parent="LightGodot"]

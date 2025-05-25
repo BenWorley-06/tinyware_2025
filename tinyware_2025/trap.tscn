@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2lyfidn1f2ur"]
+
+[ext_resource type="PackedScene" uid="uid://behmj55qfuptr" path="res://interactable.tscn" id="1_kd1db"]
+[ext_resource type="Script" uid="uid://ba6bnedrjg5au" path="res://trap.gd" id="2_w2pp3"]
+[ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="3_bmoth"]
+[ext_resource type="Texture2D" uid="uid://cjr0mua4cimoe" path="res://Assets/Temporary Art/pngtree-luxury-sofa-for-home-decoration-png-image_11888479.png" id="4_bmoth"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3wwhq"]
+shader = ExtResource("3_bmoth")
+shader_parameter/outline_enabled = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 10.0
+
+[node name="Trap" instance=ExtResource("1_kd1db")]
+script = ExtResource("2_w2pp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+material = SubResource("ShaderMaterial_3wwhq")
+position = Vector2(-1.90735e-06, 9.53674e-07)
+scale = Vector2(0.0602439, 0.0602439)
+texture = ExtResource("4_bmoth")
