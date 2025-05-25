@@ -118,5 +118,14 @@ volume_db = -20.0
 [node name="cooing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_wpc8b")
 
+[node name="gui" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="gui"]
+offset_left = 384.0
+offset_top = 492.0
+offset_right = 753.0
+offset_bottom = 515.0
+text = "WASD to Move, E to Interact with Glowing Items"
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
