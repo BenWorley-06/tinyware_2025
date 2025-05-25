@@ -4,6 +4,8 @@ class_name Player
 @export var stats: Player_Stats
 var current_interactable: Interactable = null
 
+var is_hidden = false
+
 var in_Dir = Vector2.ZERO
 
 func _process(delta: float) -> void:
@@ -48,17 +50,21 @@ func interact_with():
 		if not stats.can_move and stats.awaiting_unpause:
 				stats.can_move = true
 				stats.awaiting_unpause = false
+				is_hidden=false
 		elif current_interactable and current_interactable.can_interact:
 				current_interactable.interact(self)
 
 func _now_hiding(player):
 	if player == self:
 		print("Player now hidden!")
+		is_hidden=true
 		stats.can_move = false
 		stats.awaiting_unpause = true
 
 func sprite_toggle():
 	if stats.can_move:
 		$Sprite2D.visible = true
+		$PointLight2D.visible=true
 	else:
 		$Sprite2D.visible = false
+		$PointLight2D.visible=false

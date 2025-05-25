@@ -6,7 +6,11 @@ class_name Enemy
 @onready var state: State_Manager = $state_manager
 @onready var sprite: Sprite2D = $Sprite2D
 
-@onready var target: player = $/root/game/player
+@onready var nav: NavigationAgent2D = $NavigationAgent2D
+
+@onready var target: Player = $/root/game/player
+
+var path_node: Path2D
 
 func _process(delta: float) -> void:
 	state.update(delta)
@@ -15,6 +19,7 @@ func _process(delta: float) -> void:
 	elif velocity.x < 0:
 		sprite.flip_h = true
 	move_and_slide()
+	queue_redraw()
 	
 func take_damage(amount:int):
 	stats.hp-=amount
@@ -23,3 +28,4 @@ func take_damage(amount:int):
 		
 func dead():
 	queue_free()
+	

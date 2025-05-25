@@ -33,7 +33,6 @@ shape = SubResource("CapsuleShape2D_xtvsj")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
-drag_vertical_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.5

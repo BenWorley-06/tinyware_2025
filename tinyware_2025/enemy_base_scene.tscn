@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://41j5ou6u36rb"]
+
+[ext_resource type="Script" uid="uid://cywba10xdah6m" path="res://enemy_base_scene.gd" id="1_710l5"]
+[ext_resource type="Texture2D" uid="uid://ccs6ynarxiq4l" path="res://Assets/Temporary Art/cyclops_vance.webp" id="1_onhum"]
+[ext_resource type="Script" uid="uid://oxu0twatnue0" path="res://Game Objects/enemies/enemy stats.gd" id="2_8sluc"]
+[ext_resource type="Script" uid="uid://5t1wqifatbll" path="res://state_manager.gd" id="3_0tueu"]
+
+[sub_resource type="Resource" id="Resource_6d3k2"]
+script = ExtResource("2_8sluc")
+speed = 120.0
+max_force = 0.5
+patrol_speed = 200.0
+patrol_offset = 0.0
+path_calc_time = 0.2
+detect_range = 400.0
+patrol_enable = 1
+metadata/_custom_type_script = "uid://oxu0twatnue0"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sluc"]
+
+[node name="enemy_base_scene" type="CharacterBody2D"]
+scale = Vector2(0.665676, 0.665676)
+script = ExtResource("1_710l5")
+stats = SubResource("Resource_6d3k2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.164666, 0.226505)
+texture = ExtResource("1_onhum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.4427, 3.55081)
+shape = SubResource("CircleShape2D_8sluc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="state_manager" type="Node" parent="."]
+script = ExtResource("3_0tueu")

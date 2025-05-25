@@ -14,3 +14,8 @@ func should_transition() -> Enemy_State:
 
 func get_dist_player():
 	return enemy.global_position.distance_to(enemy.target.global_position)
+	
+func check_hidden():
+	if enemy.target.is_hidden:
+		return true
+	return false
