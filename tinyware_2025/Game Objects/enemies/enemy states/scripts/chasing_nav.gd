@@ -6,6 +6,8 @@ var path_timer:float = 0
 var tree: SceneTree
 
 func enter():
+	enemy.jingle_audio.stream=enemy.stats.chasing
+	enemy.jingle_audio.play()
 	tree = enemy.get_tree()
 	enemy.esprite.speed_scale=1
 	

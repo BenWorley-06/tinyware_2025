@@ -3,6 +3,7 @@ class_name jump_scare
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var black_fade: ColorRect = $BlackFade
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 # Images
 @export var jsp1: CompressedTexture2D
@@ -14,6 +15,7 @@ var shake_intensity: float = 10.0
 var original_position: Vector2
 
 func _ready():
+	audio_stream_player.play()
 	# Pick random texture
 	sprite_2d.texture = [jsp1, jsp2].filter(func(t): return t != null).pick_random()
 	

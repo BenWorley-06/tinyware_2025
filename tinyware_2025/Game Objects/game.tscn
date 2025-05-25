@@ -1552,7 +1552,6 @@ point_count = 24
 [node name="game" type="Node2D"]
 
 [node name="lighting" type="Node2D" parent="."]
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
 environment = SubResource("Environment_51i1y")
@@ -1609,7 +1608,7 @@ position = Vector2(904, 800)
 
 [node name="enemy_spawner" type="Node2D" parent="."]
 script = ExtResource("8_qxmc7")
-spawn_amount = 4
+spawn_amount = 5
 spawn_wait = 6.0
 spawn_wait_start = 1.0
 barney_scene = ExtResource("9_6xpe7")

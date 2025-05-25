@@ -77,7 +77,6 @@ scale = Vector2(4.70456, 3.7601)
 shape = SubResource("CircleShape2D_8sluc")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="state_manager" type="Node" parent="."]
 script = ExtResource("5_dtyxo")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2gb5jdggrqsr"]
+[gd_scene load_steps=5 format=3 uid="uid://d2gb5jdggrqsr"]
 
 [ext_resource type="Script" uid="uid://dc6dwtsrbvjd6" path="res://jump_scare_test.gd" id="1_vhxuk"]
 [ext_resource type="Texture2D" uid="uid://bgp61jq5kfnbb" path="res://Assets/Milay Assets/jsp/grandpa.png" id="2_sho2o"]
 [ext_resource type="Texture2D" uid="uid://capbgnc66tnfo" path="res://Assets/Milay Assets/jsp/grandpa_2.png" id="3_emu0u"]
+[ext_resource type="AudioStream" uid="uid://dm4vfiteo67h3" path="res://Assets/sounds/sfx/jump_scare.mp3" id="4_sho2o"]
 
 [node name="grandpa_jsp" type="CanvasLayer"]
 script = ExtResource("1_vhxuk")
@@ -20,3 +21,7 @@ offset_right = -380.0
 offset_bottom = -500.0
 scale = Vector2(33.2908, 33.2908)
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sho2o")
+volume_db = 24.0
