@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmuajt67yrrai"]
+[gd_scene load_steps=17 format=3 uid="uid://bmuajt67yrrai"]
 
 [ext_resource type="Script" uid="uid://kavclfs4egsp" path="res://Game Objects/player/player.gd" id="1_738ww"]
-[ext_resource type="Texture2D" uid="uid://c6ytnxbamj00y" path="res://Assets/Temporary Art/minion_vance.webp" id="2_4dy0l"]
 [ext_resource type="Script" uid="uid://5w4fcm6gpb26" path="res://Game Objects/player/player_stats.gd" id="2_ta7nw"]
+[ext_resource type="Texture2D" uid="uid://yi65xm7op5gj" path="res://Assets/Milay Assets/baby_crawl.png" id="3_ta7nw"]
 [ext_resource type="Texture2D" uid="uid://bths8rs8hq2af" path="res://Assets/Temporary Art/Light Godot.png" id="4_ta7nw"]
 
 [sub_resource type="Resource" id="Resource_cnw44"]
@@ -10,6 +10,42 @@ script = ExtResource("2_ta7nw")
 max_speed = 100
 acceleration = 400
 metadata/_custom_type_script = "uid://5w4fcm6gpb26"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnw44"]
+atlas = ExtResource("3_ta7nw")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmw6m"]
+atlas = ExtResource("3_ta7nw")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpc8b"]
+atlas = ExtResource("3_ta7nw")
+region = Rect2(0, 64, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2m5j"]
+atlas = ExtResource("3_ta7nw")
+region = Rect2(0, 96, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mpgeo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnw44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmw6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpc8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2m5j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtvsj"]
 height = 44.9234
@@ -36,10 +72,13 @@ gradient = SubResource("Gradient_dmw6m")
 script = ExtResource("1_738ww")
 stats = SubResource("Resource_cnw44")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.57547
-scale = Vector2(0.104754, 0.175169)
-texture = ExtResource("2_4dy0l")
+[node name="psprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 3.14509
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_mpgeo")
+autoplay = "default"
+frame_progress = 0.663736
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.57547

@@ -1484,7 +1484,6 @@ point_count = 10
 environment = SubResource("Environment_51i1y")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="lighting"]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3fm733k8gl8w"
+path="res://.godot/imported/Baby2 (mp3cut.net).wav-cfbec0db0dd7f4df9012bb684cd56774.sample"
+
+[deps]
+
+source_file="res://Assets/Milay Assets/sounds/Baby2 (mp3cut.net).wav"
+dest_files=["res://.godot/imported/Baby2 (mp3cut.net).wav-cfbec0db0dd7f4df9012bb684cd56774.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

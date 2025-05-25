@@ -13,6 +13,8 @@ class_name Enemy_Stats
 
 #	Ranges
 @export var detect_range:float = 400
+@export var catch_range: float = 70
 
 #	Enablers
 @export var patrol_enable: int =1
+@export var through_walls_enable:int = 1
