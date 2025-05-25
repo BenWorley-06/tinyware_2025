@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckr0wrsxmbeam"]
+
+[ext_resource type="Script" uid="uid://dc6dwtsrbvjd6" path="res://jump_scare_test.gd" id="1_k7tip"]
+[ext_resource type="Texture2D" uid="uid://beq4u4wdu1y7h" path="res://Assets/Temporary Art/egg_vance.png" id="1_u20ny"]
+
+[node name="jump_scare_test" type="CanvasLayer"]
+script = ExtResource("1_k7tip")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.81105, 1.81105)
+texture = ExtResource("1_u20ny")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhus25cve57q3"]
+
+[ext_resource type="Script" uid="uid://cmg8eugsoyyf1" path="res://police_car.gd" id="1_8364l"]
+[ext_resource type="Texture2D" uid="uid://d0bv8cd510p6u" path="res://Assets/environment/misc_interactables/police car.png" id="1_spw8y"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="2_6u34r"]
+[ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="3_e8ulu"]
+
+[sub_resource type="Resource" id="Resource_e8ulu"]
+script = ExtResource("2_6u34r")
+interact_range = 10.0
+outline_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbxgf"]
+shader = ExtResource("3_e8ulu")
+shader_parameter/outline_enabled = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6u34r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6u34r"]
+
+[node name="police_car" type="Area2D"]
+script = ExtResource("1_8364l")
+stats = SubResource("Resource_e8ulu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kbxgf")
+rotation = 0.886989
+texture = ExtResource("1_spw8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+material = SubResource("ShaderMaterial_6u34r")
+scale = Vector2(12.3618, 11.0808)
+shape = SubResource("CircleShape2D_6u34r")

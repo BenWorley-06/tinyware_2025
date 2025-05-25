@@ -5,6 +5,7 @@ class_name Player
 
 @onready var psprite: AnimatedSprite2D = $psprite
 @onready var collider: CollisionShape2D = $CollisionShape2D
+@onready var camera: Camera2D = $Camera2D
 
 var current_interactable: Interactable = null
 
@@ -100,3 +101,8 @@ func sprite_toggle():
 	elif not stats.can_move and not stats.frozen:
 		psprite.visible = false
 		$PointLight2D.visible=false
+		
+func create_jump_scare_scene(scene: PackedScene):
+	var scare = scene.instantiate()
+	$/root/game.add_child(scare)
+	
