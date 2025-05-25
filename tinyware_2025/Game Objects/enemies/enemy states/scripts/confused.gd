@@ -3,6 +3,7 @@ class_name Confused
 
 func enter():
 	enemy.velocity=Vector2.ZERO
+	enemy.esprite.speed_scale=0
 func exit():pass
 func update(delta:float):pass
 func should_transition() -> Enemy_State:

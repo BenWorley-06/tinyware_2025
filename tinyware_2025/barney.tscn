@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://b4ilorm434qxv"]
+
+[ext_resource type="Script" uid="uid://cwtsm78a4q8t7" path="res://barney.gd" id="1_o13ib"]
+[ext_resource type="Script" uid="uid://oxu0twatnue0" path="res://Game Objects/enemies/enemy stats.gd" id="2_w7p8p"]
+[ext_resource type="Texture2D" uid="uid://calv0yrduyrwi" path="res://Assets/Milay Assets/dino_walk_run.png" id="3_qqtai"]
+[ext_resource type="Script" uid="uid://5t1wqifatbll" path="res://state_manager.gd" id="3_w7p8p"]
+
+[sub_resource type="Resource" id="Resource_acjc2"]
+script = ExtResource("2_w7p8p")
+speed = 120.0
+max_force = 0.2
+patrol_speed = 120.0
+patrol_offset = 0.0
+path_calc_time = 0.2
+detect_range = 700.0
+catch_range = 70.0
+patrol_enable = 1
+through_walls_enable = 0
+metadata/_custom_type_script = "uid://oxu0twatnue0"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7p8p"]
+atlas = ExtResource("3_qqtai")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acjc2"]
+atlas = ExtResource("3_qqtai")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktweh"]
+atlas = ExtResource("3_qqtai")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6t6o"]
+atlas = ExtResource("3_qqtai")
+region = Rect2(0, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvklu"]
+atlas = ExtResource("3_qqtai")
+region = Rect2(64, 128, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_38xc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7p8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acjc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktweh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6t6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvklu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sluc"]
+
+[node name="barney" type="CharacterBody2D"]
+scale = Vector2(0.665676, 0.665676)
+script = ExtResource("1_o13ib")
+stats = SubResource("Resource_acjc2")
+
+[node name="esprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-25.538, 1.50223)
+rotation = 1.59054
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_38xc7")
+frame_progress = 0.889155
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.00446)
+scale = Vector2(4.70456, 3.7601)
+shape = SubResource("CircleShape2D_8sluc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="state_manager" type="Node" parent="."]
+script = ExtResource("3_w7p8p")
