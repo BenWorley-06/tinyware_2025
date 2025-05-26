@@ -16,7 +16,7 @@ func _on_play_pressed():
 	$PlaySound.play()
 	$PlaySound.finished
 	await start_transition()
-	SceneManager.go_to_game()
+	get_tree().change_scene_to_file("res://Assets/Menu/Scenes/cutscene.tscn")
 
 
 func _on_exit_pressed():

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2rceqq7npfis"]
+
+[ext_resource type="Script" uid="uid://dv5drymrvw2vk" path="res://Assets/Menu/Scripts/control.gd" id="1_et7e0"]
+[ext_resource type="Texture2D" uid="uid://cc6jscwhtw6ac" path="res://Assets/Milay Assets/Start.png" id="2_7rh75"]
+
+[node name="Cutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_et7e0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+scale = Vector2(0.996335, 0.996335)
+texture = ExtResource("2_7rh75")
