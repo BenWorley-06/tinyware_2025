@@ -1574,7 +1574,6 @@ point_count = 17
 [node name="game" type="Node2D"]
 
 [node name="lighting" type="Node2D" parent="."]
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
 environment = SubResource("Environment_51i1y")
