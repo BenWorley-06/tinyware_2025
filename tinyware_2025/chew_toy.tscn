@@ -30,7 +30,7 @@ stats = SubResource("Resource_mw37a")
 texture_filter = 1
 material = SubResource("ShaderMaterial_kbxgf")
 rotation = 0.0430108
-scale = Vector2(8, 8)
+scale = Vector2(3.61166, 3.61166)
 texture = ExtResource("4_aphaq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

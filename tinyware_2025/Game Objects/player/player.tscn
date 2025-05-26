@@ -54,11 +54,11 @@ height = 44.9234
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4dy0l"]
 
-[sub_resource type="Gradient" id="Gradient_ta7nw"]
+[sub_resource type="Gradient" id="Gradient_wpc8b"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cnw44"]
-gradient = SubResource("Gradient_ta7nw")
+gradient = SubResource("Gradient_wpc8b")
 width = 500
 height = 500
 fill = 1
@@ -102,7 +102,7 @@ texture = ExtResource("4_ta7nw")
 shape = SubResource("CircleShape2D_4dy0l")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 energy = 0.8
 texture = SubResource("GradientTexture2D_cnw44")
 

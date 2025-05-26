@@ -11,7 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_5gjx8"]
 script = ExtResource("5_evy2y")
-speed = 90.0
+speed = 70.0
 max_force = 0.5
 patrol_speed = 600.0
 patrol_offset = 0.0
