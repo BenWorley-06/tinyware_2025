@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dvt403wrr8pl2"]
+[gd_scene load_steps=34 format=3 uid="uid://dvt403wrr8pl2"]
 
 [ext_resource type="PackedScene" uid="uid://bmuajt67yrrai" path="res://Game Objects/player/player.tscn" id="1_c3x52"]
 [ext_resource type="Texture2D" uid="uid://ylmj8o22so8e" path="res://Assets/environment/walls and floors/InteriorTilesLITE.png" id="2_51i1y"]
@@ -1553,6 +1553,24 @@ _data = {
 }
 point_count = 24
 
+[sub_resource type="Curve2D" id="Curve2D_bids0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2281, 4910, 0, 0, 0, 0, -590, 4818, 0, 0, 0, 0, -564, 3743, 0, 0, 0, 0, 406, 3717, 0, 0, 0, 0, 524, 2747, 0, 0, 0, 0, -407, 2603, 0, 0, 0, 0, -486, 2052, 0, 0, 0, 0, -420, 1396, 0, 0, 0, 0, 1166, 1449, 0, 0, 0, 0, 1153, 2039, 0, 0, 0, 0, 3592, 2039, 0, 0, 0, 0, 3736, 2249, 0, 0, 0, 0, 3697, 1344, 0, 0, 0, 0, 3736, 3730, 0, 0, 0, 0, 3120, 3743, 0, 0, 0, 0, 2438, 4005, 0, 0, 0, 0, -1456, 3730, 0, 0, 0, 0, -1547, 2026, 0, 0, 0, 0, -486, 2144, 0, 0, 0, 0, -407, 2642, 0, 0, 0, 0, 380, 2694, 0, 0, 0, 0, 353, 3717, 0, 0, 0, 0, 1494, 3769, 0, 0, 0, 0, 2281, 3782, 0, 0, 0, 0, 2281, 4503, 0, 0, 0, 0, 2281, 4910)
+}
+point_count = 26
+
+[sub_resource type="Curve2D" id="Curve2D_emf8l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4286, 4189, 0, 0, 0, 0, 2438, 3835, 0, 0, 0, 0, 393, 3743, 0, 0, 0, 0, 380, 2760, 0, 0, 0, 0, 1193, 2694, 0, 0, 0, 0, 1127, 1410, 0, 0, 0, 0, -472, 1396, 0, 0, 0, 0, -499, 2117, 0, 0, 0, 0, -1351, 2091, 0, 0, 0, 0, -1482, 3704, 0, 0, 0, 0, -105, 3743, 0, 0, 0, 0, 1809, 3782, 0, 0, 0, 0, 3041, 3442, 0, 0, 0, 0, 3041, 2681, 0, 0, 0, 0, 2936, 3914, 0, 0, 0, 0, 4221, 3376, 0, 0, 0, 0, 4286, 4189)
+}
+point_count = 17
+
+[sub_resource type="Curve2D" id="Curve2D_uc8u4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1179, 2681, 0, 0, 0, 0, -433, 2681, 0, 0, 0, 0, -446, 1396, 0, 0, 0, 0, 1140, 1449, 0, 0, 0, 0, 1153, 2026, 0, 0, 0, 0, 3657, 2104, 0, 0, 0, 0, 1193, 2065, 0, 0, 0, 0, 1127, 2747, 0, 0, 0, 0, 380, 2760, 0, 0, 0, 0, 419, 3769, 0, 0, 0, 0, 327, 2707, 0, 0, 0, 0, -472, 2655, 0, 0, 0, 0, -446, 2131, 0, 0, 0, 0, -1403, 2196, 0, 0, 0, 0, -420, 2131, 0, 0, 0, 0, -420, 2681, 0, 0, 0, 0, 1179, 2681)
+}
+point_count = 17
+
 [node name="game" type="Node2D"]
 
 [node name="lighting" type="Node2D" parent="."]
@@ -1649,6 +1667,15 @@ curve = SubResource("Curve2D_sv8a8")
 
 [node name="Path2D4" type="Path2D" parent="enemy_spawner/paths"]
 curve = SubResource("Curve2D_pmqof")
+
+[node name="Path2D5" type="Path2D" parent="enemy_spawner/paths"]
+curve = SubResource("Curve2D_bids0")
+
+[node name="Path2D6" type="Path2D" parent="enemy_spawner/paths"]
+curve = SubResource("Curve2D_emf8l")
+
+[node name="Path2D7" type="Path2D" parent="enemy_spawner/paths"]
+curve = SubResource("Curve2D_uc8u4")
 
 [node name="interactable_spawns" type="Node2D" parent="."]
 
@@ -1862,6 +1889,21 @@ position = Vector2(-1727, 2539)
 spawn_chance = 0.5
 object_scene = ExtResource("5_fr0ty")
 
+[node name="random_object_spawn52" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(3001, 4312)
+spawn_chance = 0.5
+object_scene = ExtResource("5_fr0ty")
+
+[node name="random_object_spawn53" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(5687, 3417)
+spawn_chance = 0.5
+object_scene = ExtResource("5_fr0ty")
+
+[node name="random_object_spawn54" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(-554, 4903)
+spawn_chance = 0.5
+object_scene = ExtResource("5_fr0ty")
+
 [node name="random_object_spawn2" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
 position = Vector2(6289, 3180)
 spawn_chance = 0.5
@@ -1884,6 +1926,16 @@ object_scene = ExtResource("7_3wmsx")
 
 [node name="random_object_spawn4" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
 position = Vector2(3389, 3173)
+spawn_chance = 0.5
+object_scene = ExtResource("16_133w8")
+
+[node name="random_object_spawn50" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(1566, 3670)
+spawn_chance = 0.5
+object_scene = ExtResource("16_133w8")
+
+[node name="random_object_spawn51" parent="interactable_spawns" instance=ExtResource("11_j41ou")]
+position = Vector2(5677, 1806)
 spawn_chance = 0.5
 object_scene = ExtResource("16_133w8")
 

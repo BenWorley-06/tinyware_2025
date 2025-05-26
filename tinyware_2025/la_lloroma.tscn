@@ -13,10 +13,10 @@
 script = ExtResource("5_evy2y")
 speed = 70.0
 max_force = 0.5
-patrol_speed = 600.0
+patrol_speed = 500.0
 patrol_offset = 0.0
-path_calc_time = 0.2
-detect_range = 700.0
+path_calc_time = 1.0
+detect_range = 200.0
 catch_range = 70.0
 hear_range = 2000.0
 patrol_enable = 1
