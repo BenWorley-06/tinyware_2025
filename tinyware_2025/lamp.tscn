@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://wmewqrqg6fkr"]
+
+[ext_resource type="Texture2D" uid="uid://bths8rs8hq2af" path="res://Assets/Temporary Art/Light Godot.png" id="1_bekw5"]
+[ext_resource type="Texture2D" uid="uid://blwyw3kycxs01" path="res://Assets/environment/furniture/lamp.png" id="1_uno5e"]
+[ext_resource type="Script" uid="uid://bij4ek6ce53w6" path="res://lamp.gd" id="1_vxcd3"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="2_qfipa"]
+[ext_resource type="AudioStream" uid="uid://dr1jue0luuokx" path="res://Assets/sounds/sfx/glass-breaks.mp3" id="5_00ij4"]
+
+[sub_resource type="Resource" id="Resource_qfipa"]
+script = ExtResource("2_qfipa")
+interact_range = 100.0
+outline_color = Color(1, 1, 0, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfipa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bekw5"]
+
+[sub_resource type="Gradient" id="Gradient_ta7nw"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bekw5"]
+gradient = SubResource("Gradient_ta7nw")
+width = 500
+height = 500
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="lamp" type="Area2D"]
+script = ExtResource("1_vxcd3")
+stats = SubResource("Resource_qfipa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_qfipa")
+scale = Vector2(4, 4)
+texture = ExtResource("1_uno5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 52)
+scale = Vector2(6.25193, -6.31602)
+shape = SubResource("CircleShape2D_bekw5")
+
+[node name="lighting" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="lighting"]
+scale = Vector2(2, 2)
+energy = 0.6
+texture = ExtResource("1_bekw5")
+
+[node name="PointLight2D2" type="PointLight2D" parent="lighting"]
+scale = Vector2(4, 4)
+energy = 0.8
+texture = SubResource("GradientTexture2D_bekw5")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_00ij4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

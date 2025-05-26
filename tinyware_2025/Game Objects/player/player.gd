@@ -15,10 +15,20 @@ var is_hidden = false
 
 var in_Dir = Vector2.ZERO
 
+var tutorial_timer:float = 5
+var tutorial_on=true
+
 func _ready() -> void:
 	walk.play()
 	
 func _process(delta: float) -> void:
+	
+	if tutorial_on:
+		tutorial_timer-=delta
+		if tutorial_timer<=0:
+			tutorial_on=false
+			$gui.queue_free()
+		
 	take_input()
 	movement(delta)
 	handle_visuals()

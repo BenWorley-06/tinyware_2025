@@ -21,6 +21,7 @@ catch_range = 100.0
 hear_range = 2000.0
 patrol_enable = 1
 through_walls_enable = 0
+look_enable = 1
 jump_scare_scene = ExtResource("3_ktweh")
 jingle = ExtResource("2_ktweh")
 walking = ExtResource("5_ktweh")

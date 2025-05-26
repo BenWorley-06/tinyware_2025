@@ -19,6 +19,7 @@ class_name Enemy_Stats
 #	Enablers
 @export var patrol_enable: int =1
 @export var through_walls_enable:int = 1
+@export var look_enable:int = 1
 
 @export var jump_scare_scene: PackedScene
 

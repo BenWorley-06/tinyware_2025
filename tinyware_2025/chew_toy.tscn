@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://1jc6qoan1itf"]
+
+[ext_resource type="Script" uid="uid://dleka8fcj27ik" path="res://lego.gd" id="1_aphaq"]
+[ext_resource type="Script" uid="uid://db755iut8ikhi" path="res://Game Objects/interactables/interactable_stats.gd" id="2_4m06p"]
+[ext_resource type="Shader" uid="uid://dhqay2cqsefdp" path="res://outline.gdshader" id="3_wu4wj"]
+[ext_resource type="Texture2D" uid="uid://co158oa6m3p3i" path="res://Assets/environment/misc_interactables/chew_toy.png" id="4_aphaq"]
+[ext_resource type="AudioStream" uid="uid://6ga4xk66u00l" path="res://Assets/sounds/sfx/squeaky-dog-toy.mp3" id="5_aphaq"]
+
+[sub_resource type="Resource" id="Resource_mw37a"]
+script = ExtResource("2_4m06p")
+interact_range = 10.0
+outline_color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://db755iut8ikhi"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbxgf"]
+shader = ExtResource("3_wu4wj")
+shader_parameter/outline_enabled = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6u34r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6u34r"]
+
+[node name="chew_toy" type="Area2D"]
+script = ExtResource("1_aphaq")
+stats = SubResource("Resource_mw37a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kbxgf")
+rotation = 0.0430108
+scale = Vector2(3.61166, 3.61166)
+texture = ExtResource("4_aphaq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+material = SubResource("ShaderMaterial_6u34r")
+scale = Vector2(12.3618, 11.0808)
+shape = SubResource("CircleShape2D_6u34r")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_aphaq")

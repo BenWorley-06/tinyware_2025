@@ -25,7 +25,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	state.update(delta)
-	look_at(target.global_position)
+	if stats.look_enable:
+		look_at(target.global_position)
 	catch_player()
 	move_and_slide()
 	queue_redraw()
