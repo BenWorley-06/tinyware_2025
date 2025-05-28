@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://bb4q5xviqujks"]
+[gd_scene load_steps=28 format=3 uid="uid://bb4q5xviqujks"]
 
 [ext_resource type="Script" uid="uid://cxjjxmvdjijj8" path="res://Assets/Menu/Scripts/end_menu.gd" id="1_hitm7"]
 [ext_resource type="Texture2D" uid="uid://cjx1o73humv28" path="res://Assets/Temporary Art/pngtree-the-big-yellow-moon-shone-brightly-png-image_6634642.png" id="2_1c0ws"]
 [ext_resource type="Texture2D" uid="uid://yaywtf1d6etf" path="res://Assets/Temporary Art/Untitled_Artwork (1).png" id="2_8a6m2"]
 [ext_resource type="FontFile" uid="uid://drsnf86lvb36g" path="res://Assets/Fonts/FrederickatheGreat-Regular.ttf" id="2_hm7it"]
+[ext_resource type="AudioStream" uid="uid://j50kdjcng2o0" path="res://Assets/Milay Assets/sounds/Funny Baby Laughing Voice (Free Download Sound Effect) [8JPswf-_3qs].wav" id="5_8a6m2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8a6m2"]
 
@@ -152,6 +153,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hm7it")
 theme_override_font_sizes/font_size = 90
 text = "Main"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8a6m2")
 
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Main" to="." method="_on_main_pressed"]
