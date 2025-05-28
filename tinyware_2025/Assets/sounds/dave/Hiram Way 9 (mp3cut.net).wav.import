@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c36uvqfegi6wk"
+path="res://.godot/imported/Hiram Way 9 (mp3cut.net).wav-c33a338448df0d756dccf5d28140b28f.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/dave/Hiram Way 9 (mp3cut.net).wav"
+dest_files=["res://.godot/imported/Hiram Way 9 (mp3cut.net).wav-c33a338448df0d756dccf5d28140b28f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

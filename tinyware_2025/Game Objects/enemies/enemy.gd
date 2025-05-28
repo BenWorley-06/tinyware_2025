@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 	catch_player()
 	move_and_slide()
 	queue_redraw()
+	always_called(delta)
 	
 func take_damage(amount:int):
 	stats.hp-=amount
@@ -52,4 +53,7 @@ func catch_player():
 		print("BOO")
 		state.switch_to(Jump_Scare_State.new(self))	
 		caught=true
+		
+func always_called(delta):
+	pass
 	

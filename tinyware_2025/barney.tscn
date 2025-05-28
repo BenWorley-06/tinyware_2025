@@ -99,3 +99,5 @@ script = ExtResource("3_w7p8p")
 [node name="jingle_audio" type="AudioStreamPlayer" parent="."]
 
 [node name="sfx" type="AudioStreamPlayer2D" parent="."]
+
+[node name="voice" type="AudioStreamPlayer2D" parent="."]

@@ -19,6 +19,10 @@ config/icon="res://Assets/Temporary Art/icon.svg"
 
 SceneManager="*res://scene_manager.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 up={
